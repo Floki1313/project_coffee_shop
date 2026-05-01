@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+
+    <order timestamp="4/19/2026, 11:23:57 PM">
+        <customer>
+            <name>Валерка</name>
+            <email>fdsfs</email>
+            <phone>+275296344453</phone>
+        </customer>
+        <details>
+            <address>Минск, Свердлова 11</address>
+            <payment>Картой</payment>
+            <comment>К 18 00</comment>
+        </details>
+        <items>
+            
+            <item>
+                <name>Эфиопия пуровер</name>
+                <price>6.3</price>
+            </item>
+            <item>
+                <name>Двойной эспрессо</name>
+                <price>5</price>
+            </item>
+            <item>
+                <name>Круассан с маслом</name>
+                <price>3</price>
+            </item>
+        </items>
+    </order>
+</orders>

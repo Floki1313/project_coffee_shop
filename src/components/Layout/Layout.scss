@@ -1,0 +1,17 @@
+$base-unit: 100;
+
+.main-wrapper {
+  width: $base-unit * 1%;     
+  min-height: $base-unit * 1vh; 
+  background: #FBF6F3;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+}
