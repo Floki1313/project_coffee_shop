@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project_coffee_shop/static/css/main.bc08c46c.css",
-    "main.js": "/project_coffee_shop/static/js/main.2993fc3b.js",
+    "main.css": "/project_coffee_shop/static/css/main.8a8320a1.css",
+    "main.js": "/project_coffee_shop/static/js/main.828bdda6.js",
     "static/js/453.78384f26.chunk.js": "/project_coffee_shop/static/js/453.78384f26.chunk.js",
     "static/media/affogato.svg": "/project_coffee_shop/static/media/affogato.f8a18e0f1ebb0964cbd791e6197b9904.svg",
     "static/media/avocadoToast.svg": "/project_coffee_shop/static/media/avocadoToast.347e9b2b7d671072a49266e42a62676a.svg",
@@ -58,12 +58,12 @@
     "static/media/search.svg": "/project_coffee_shop/static/media/search.b416fff56d7dee768643ec96ccbd14c9.svg",
     "static/media/in1.svg": "/project_coffee_shop/static/media/in1.c93895eb2f959fd0799039be93fdc32a.svg",
     "static/media/logo-white.svg": "/project_coffee_shop/static/media/logo-white.94aeb4bd4b87b9345483a40f088fca0a.svg",
-    "main.bc08c46c.css.map": "/project_coffee_shop/static/css/main.bc08c46c.css.map",
-    "main.2993fc3b.js.map": "/project_coffee_shop/static/js/main.2993fc3b.js.map",
+    "main.8a8320a1.css.map": "/project_coffee_shop/static/css/main.8a8320a1.css.map",
+    "main.828bdda6.js.map": "/project_coffee_shop/static/js/main.828bdda6.js.map",
     "453.78384f26.chunk.js.map": "/project_coffee_shop/static/js/453.78384f26.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc08c46c.css",
-    "static/js/main.2993fc3b.js"
+    "static/css/main.8a8320a1.css",
+    "static/js/main.828bdda6.js"
   ]
 }
