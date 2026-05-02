@@ -38,7 +38,7 @@ const OrderPage = ({ item = [], onRemoveItem }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/save-xml', {
+      const response = await fetch('https://project-coffee-shop.onrender.com/save-xml', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData)

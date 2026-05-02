@@ -25,7 +25,7 @@ const Tea = ({onAdd}) => {
                 <CardWithButton onAdd={onAdd} name_img = {puerTea}  alt_={"puerTea"} title={"Чай пуэр"} price={5.00} description={"Выдержанный чай с мощным эффектом. Бывает мягкий древесный (Шу) или терпкий фруктовый (Шен)."}/>
                 <CardWithButton onAdd={onAdd} name_img = {yellowTea}  alt_={"yellowTea"} title={"Желтый чай"} price={3.50} description={"Элитный чай, который долго «томят» в мешках. Вкус мягче зеленого, без терпкости, с бархатным послевкусием."}/>
                 <CardWithButton onAdd={onAdd} name_img = {matchaTea}  alt_={"matchaTea"} title={"Чай матча"} price={5.00} description={"Перемолотый в пудру зеленый чай. Выпивается вместе с заваркой, очень бодрит и напоминает густой смузи."}/>
-                <CardWithButton onAdd={onAdd} name_img = {masalaTea}  alt_={"masalaTea"} title={"Чай масала"} price={4.00} description={"Индийский черный чай, сваренный на молоке со специями (кардамон, корица, имбирь). Согревает и очень сытный."}/>
+                <CardWithButton onAdd={onAdd} name_img = {masalaTea}  alt_={"masalaTea"} title={"Чай масала"} price={4.00} description={"Индийский черный чай, сваренный на молоке со специями (кардамон, корица, имбирь)."}/>
             </div>
         </div>
     );

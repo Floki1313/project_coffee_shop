@@ -1,7 +1,7 @@
 {
   "name": "project",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://floki1313.github.io/project_coffee_shop/",
   "private": true,
   "dependencies": {
     "@pbe/react-yandex-maps": "^1.2.5",
