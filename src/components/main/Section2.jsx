@@ -1,18 +1,22 @@
+/**
+ * Section2.jsx  — блок «Фирменная обжарка» на главной.
+ * Четыре карточки статичны в коде; клик «Всё меню» вызывает onMenuClick из Layout.
+ */
 import React from "react";
 import "./Section_2.css";
-import card1 from "../../img/sec_2bg_1.svg"; 
-import card2 from "../../img/vanillaLatte.svg"; 
-import card3 from "../../img/nitroColdBrew.svg"; 
-import card4 from "../../img/ethiopianPour_over.svg"; 
+// Четыре отдельных импорта изображений
+import card1 from "../../img/sec_2bg_1.svg";
+import card2 from "../../img/vanillaLatte.svg";
+import card3 from "../../img/nitroColdBrew.svg";
+import card4 from "../../img/ethiopianPour_over.svg";
 import Card from "../templates/Card";
 
+/** @param {function} onMenuClick — открыть полное меню (тот же колбэк, что для пункта «Меню» в шапке) */
 const Specialty = ({onMenuClick}) => {
-
   return (
     <section className="specialty">
       <div className="specialty-container">
-        
-        
+
         <div className="specialty-header">
           <div className="specialty-info">
             <h2 className="specialty-title">Фирменная обжарка</h2>
@@ -20,6 +24,7 @@ const Specialty = ({onMenuClick}) => {
               Откройте для себя наши самые популярные бленды и моносорта.
             </p>
           </div>
+          {/* Дублирующий onClick на span со стрелкой: оба вызова ведут в меню */}
           <p className="view-all" onClick={onMenuClick}>
             Всё меню <span className="arrow" onClick={onMenuClick}>→</span>
           </p>

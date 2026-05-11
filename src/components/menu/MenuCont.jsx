@@ -1,3 +1,7 @@
+/**
+ * MenuCont.jsx — страница меню: заголовок (MenuTitle), фильтры (MenuSort), затем одна или несколько
+ * секций с товарами. Какие секции видны, определяет объект view_menu в useState.
+ */
 import React,{useState} from "react";
 import MenuTitle from "./MenuTitle.jsx";
 import MenuSort from "./MenuSort.jsx";
@@ -7,7 +11,9 @@ import Bakery from "./Bakery.jsx";
 import Tea from "./Tea.jsx";
 import SignatureCoffee from "./SignatureCoffee.jsx";
 
+/** @param {function(object): void} onAdd — пробрасывается вниз до CardWithButton.onAdd */
 const MenuCont = ({ onAdd }) => {
+    // Каждый ключ — флаг «рендерить ли эту секцию»; все true = режим «Все позиции»
     const[view_menu, setView_menu] = useState({
         espresso: true,
         iced: true,
@@ -16,6 +22,7 @@ const MenuCont = ({ onAdd }) => {
         bakery: true
     });
 
+    // Полный сброс фильтра: показать все категории сразу
     const ClickAll = () =>{
         setView_menu({
             espresso: true,
@@ -26,6 +33,7 @@ const MenuCont = ({ onAdd }) => {
         })
     }
 
+    // Ровно одна категория: espresso true, остальные false
     const ClickEspresso = () =>{
         setView_menu({
             espresso: true,
@@ -79,13 +87,14 @@ const MenuCont = ({ onAdd }) => {
     return(
         <div>
             <MenuTitle/>
+            {/* Каждый onClick* связан с кнопкой в MenuSort; при клике меняется view_menu */}
             <MenuSort onClickAll={ClickAll} onClickEspresso={ClickEspresso} onClickIced={ClickIced} onClickSignature={ClickSignature} onClickTea={ClickTea} onClickBakery={ClickBakery}/>
             {view_menu.espresso && <EspressoSection onAdd={onAdd}/>}
             {view_menu.iced && <IcedCoffee onAdd={onAdd}/>}
             {view_menu.signature && <SignatureCoffee onAdd={onAdd}/>}
             {view_menu.tea && <Tea onAdd={onAdd}/>}
             {view_menu.bakery && <Bakery onAdd={onAdd}/>}
-            
+
 
 
         </div>

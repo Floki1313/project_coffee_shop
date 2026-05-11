@@ -1,17 +1,19 @@
-$base-unit: 100;
+/* Оболочка Layout.jsx — корневой flex на всю высоту окна */ /* файл при компиляции → CSS */
 
-.main-wrapper {
-  width: $base-unit * 1%;     
-  min-height: $base-unit * 1vh; 
-  background: #FBF6F3;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  
-  padding: 0;
-  margin: 0;
-  position: relative;
-  overflow-x: hidden;
-}
+$base-unit: 100; /* числовая база для вычислений ниже */
+
+.main-wrapper { /* класс на корневом div в Layout */
+  width: $base-unit * 1%; /* 100% ширины родителя (окна) */
+  min-height: $base-unit * 1vh; /* не меньше высоты вьюпорта */
+  background: #FBF6F3; /* фон под всем контентом страницы */
+
+  display: flex; /* включаем flex */
+  flex-direction: column; /* вертикальный стек дочерних блоков */
+  justify-content: flex-start; /* прижать содержимое к началу главной оси (вверх) */
+  align-items: stretch; /* растянуть детей на всю ширину поперечной оси */
+
+  padding: 0; /* без внутренних полей у оболочки */
+  margin: 0; /* без внешних полей */
+  position: relative; /* создаёт контекст позиционирования при необходимости */
+  overflow-x: hidden; /* скрыть горизонтальный скролл от переполнения */
+} /* конец .main-wrapper */

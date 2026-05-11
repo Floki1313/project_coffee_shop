@@ -1,116 +1,114 @@
-.hero {
-  width: 100%;
-  min-height: 41.25rem; 
-  background: #F5EFEB;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem 4rem; 
-}
+.hero { /* первая секция главной Section1.jsx */
+  width: 100%; /* на всю ширину */
+  min-height: 41.25rem; /* минимальная высота блока (~660px) */
+  background: #F5EFEB; /* фон секции */
+  display: flex; /* центрируем контейнер */
+  justify-content: center; /* по горизонтали */
+  align-items: center; /* по вертикали */
+  padding: 5rem 4rem; /* внутренние поля */
+} /* конец .hero */
 
-.hero-container {
-  width: 100%;
-  max-width: 90rem; 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem; 
-}
+.hero-container { /* обёртка двух колонок */
+  width: 100%; /* ширина */
+  max-width: 90rem; /* ограничение как у шапки */
+  display: flex; /* две колонки */
+  flex-direction: row; /* слева направо */
+  align-items: center; /* выровнять по вертикали */
+  justify-content: space-between; /* текст и картинка по краям */
+  gap: 4rem; /* зазор между колонками */
+} /* конец .hero-container */
 
-.hero-content {
-  flex: 1;
-  max-width: 39rem; 
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+.hero-content { /* левая текстовая колонка */
+  flex: 1; /* занять доступную долю ширины */
+  max-width: 39rem; /* ограничить ширину текста */
+  display: flex; /* вертикальный стек */
+  flex-direction: column; /* заголовок, абзац, кнопки */
+  gap: 1.5rem; /* между блоками */
+} /* конец .hero-content */
 
-.hero-title {
-  font-weight: 700;
-  font-size: 3.4375rem; 
-  line-height: 1.12;   
-  color: #2C1A14;
-}
+.hero-title { /* главный заголовок */
+  font-weight: 700; /* жирный */
+  font-size: 3.4375rem; /* крупный размер */
+  line-height: 1.12; /* плотный межстрочный */
+  color: #2C1A14; /* цвет текста */
+} /* конец .hero-title */
 
-.hero-text {
-  font-weight: 400;
-  font-size: 1rem;      
-  line-height: 1.8;     
-  color: #5C4033;
-  max-width: 35rem;    
-}
+.hero-text { /* подзаголовок/абзац */
+  font-weight: 400; /* обычный */
+  font-size: 1rem; /* базовый размер */
+  line-height: 1.8; /* удобная читаемость */
+  color: #5C4033; /* вторичный коричневый */
+  max-width: 35rem; /* уже заголовка */
+} /* конец .hero-text */
 
-.hero-buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;           
-  margin-top: 1rem;
-}
+.hero-buttons { /* ряд кнопок CTA */
+  display: flex; /* в строку */
+  flex-direction: row; /* явно горизонтально */
+  gap: 1rem; /* между кнопками */
+  margin-top: 1rem; /* отступ от текста */
+} /* конец .hero-buttons */
 
-.btn-primary {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;  
-  background: #8B5A2B;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
+.btn-primary { /* основная кнопка */
+  display: flex; /* текст и стрелка в ряд */
+  align-items: center; /* по вертикали */
+  gap: 0.5rem; /* зазор до иконки */
+  padding: 1rem 2rem; /* поля кнопки */
+  background: #8B5A2B; /* заливка */
+  color: #FFFFFF; /* белый текст */
+  border: none; /* без рамки */
+  border-radius: 6px; /* скругление */
+  font-weight: 600; /* полужирный */
+  font-size: 1rem; /* размер шрифта */
+  cursor: pointer; /* рука */
+  transition: opacity 0.2s; /* запас под hover-эффект */
+} /* конец .btn-primary */
 
+.btn-secondary { /* вторичная кнопка */
+  padding: 1rem 2rem; /* поля */
+  background: transparent; /* прозрачный фон */
+  color: #8B5A2B; /* цвет текста и рамки */
+  border: 1px solid #8B5A2B; /* обводка */
+  border-radius: 6px; /* скругление */
+  font-weight: 600; /* полужирный */
+  font-size: 1rem; /* размер */
+  cursor: pointer; /* рука */
+} /* конец .btn-secondary */
 
+.hero-image-container { /* правая колонка с картинкой */
+  flex: 1; /* доля ширины */
+  max-width: 39rem; /* ограничение */
+  height: 31.25rem; /* фиксированная высота блока */
+  box-shadow: 0px 10px 30px rgba(44, 26, 20, 0.1); /* тень */
+  border-radius: 8px; /* скругление углов блока */
+  overflow: hidden; /* обрезать img по скруглению */
+} /* конец .hero-image-container */
 
-.btn-secondary {
-  padding: 1rem 2rem;
-  background: transparent;
-  color: #8B5A2B;
-  border: 1px solid #8B5A2B;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-}
+.hero-img { /* изображение hero */
+  width: 100%; /* на всю ширину контейнера */
+  height: 100%; /* на всю высоту контейнера */
+  object-fit: cover; /* кадрирование с сохранением пропорций */
+} /* конец .hero-img */
 
-.hero-image-container {
-  flex: 1;
-  max-width: 39rem;
-  height: 31.25rem;     
-  box-shadow: 0px 10px 30px rgba(44, 26, 20, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-}
+@media (max-width: 1024px) { /* планшет */
+  .hero { /* уменьшаем поля секции */
+    padding: 3rem 2rem; /* компактнее */
+  } /* конец .hero */
+  .hero-title { /* меньше заголовок */
+    font-size: 2.5rem; /* уменьшенный размер */
+  } /* конец .hero-title */
+} /* конец media 1024px */
 
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-}
-
-@media (max-width: 1024px) {
-  .hero {
-    padding: 3rem 2rem;
-  }
-  .hero-title {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column; 
-    text-align: center;
-    gap: 3rem;
-  }
-  .hero-buttons {
-    justify-content: center;
-    flex-direction: column; 
-  }
-  .hero-content {
-    align-items: center;
-  }
-}
+@media (max-width: 768px) { /* мобильный */
+  .hero-container { /* одна колонка */
+    flex-direction: column; /* стек вертикально */
+    text-align: center; /* текст по центру */
+    gap: 3rem; /* больше зазор между блоками */
+  } /* конец .hero-container */
+  .hero-buttons { /* кнопки по центру */
+    justify-content: center; /* горизонтально */
+    flex-direction: column; /* кнопки столбцом */
+  } /* конец .hero-buttons */
+  .hero-content { /* выровнять содержимое колонки */
+    align-items: center; /* по центру поперечной оси */
+  } /* конец .hero-content */
+} /* конец media 768px */

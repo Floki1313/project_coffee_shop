@@ -1,371 +1,372 @@
-.order-page-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 2.5rem 5%;
-  box-sizing: border-box;
-}
+.order-page-wrapper { /* корневой flex страницы заказа Order.jsx */
+  display: flex; /* flex layout */
+  flex-direction: row; /* форма слева, summary справа */
+  justify-content: center; /* центрировать пару колонок */
+  align-items: flex-start; /* прижать к верху (для sticky summary) */
+  gap: 2rem; /* зазор между колонками */
+  max-width: 80rem; /* максимальная ширина всей страницы заказа */
+  margin: 0 auto; /* центрирование по горизонтали */
+  padding: 2.5rem 5%; /* вертикаль и процентные бока */
+  box-sizing: border-box; /* padding в ширине */
+} /* конец .order-page-wrapper */
 
-.checkout-container {
-  flex: 1.5;
-  max-width: 50.5rem;
-}
+.checkout-container { /* первая декларация: только flex и max-width */
+  flex: 1.5; /* шире чем summary (1.5 к 1) */
+  max-width: 50.5rem; /* предел ширины формы */
+} /* конец первой .checkout-container */
 
-.order-summary {
-  flex: 1;
-  max-width: 27.5rem;
-  position: sticky;
-  top: 2rem;
-}
+.order-summary { /* первая декларация: sticky колонка корзины */
+  flex: 1; /* меньшая доля ширины */
+  max-width: 27.5rem; /* предел ширины summary */
+  position: sticky; /* прилипание при прокрутке */
+  top: 2rem; /* отступ от верха вьюпорта */
+} /* конец первой .order-summary */
 
-@media (max-width: 64rem) {
-  .order-page-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  .order-summary, .checkout-container {
-    max-width: 100%;
-    width: 100%;
-    position: static;
-  }
-}
+@media (max-width: 64rem) { /* 1024px и меньше */
+  .order-page-wrapper { /* колонки друг под другом */
+    flex-direction: column; /* вертикальный стек */
+    align-items: center; /* центрировать колонки */
+  } /* конец .order-page-wrapper */
+  .order-summary, /* селектор группы: обе колонки */
+  .checkout-container { /* на узком экране */
+    max-width: 100%; /* на всю ширину */
+    width: 100%; /* явная ширина */
+    position: static; /* отключить sticky у summary */
+  } /* конец группы */
+} /* конец media 64rem */
 
-.checkout-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  max-width: 50.5rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 1.25rem;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-  color: #2E2A28;
-}
+.checkout-container { /* вторая декларация: детальный вид формы */
+  display: flex; /* колонка секций */
+  flex-direction: column; /* вертикально */
+  gap: 2.5rem; /* между секциями формы */
+  max-width: 50.5rem; /* снова предел */
+  width: 100%; /* заполнить доступное */
+  margin: 0 auto; /* центрировать внутри wrapper */
+  padding: 1.25rem; /* внутренние поля колонки */
+  box-sizing: border-box; /* модель размеров */
+  font-family: 'Inter', sans-serif; /* шрифт формы */
+  color: #2E2A28; /* цвет текста по умолчанию */
+} /* конец второй .checkout-container */
 
-.form-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-}
+.form-section { /* секция: контакты / получение / оплата */
+  display: flex; /* колонка полей */
+  flex-direction: column; /* вертикально */
+  gap: 1.5rem; /* между элементами секции */
+  width: 100%; /* на всю ширину колонки */
+} /* конец .form-section */
 
-.section-heading {
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1.2083;
-  margin: 0;
-}
+.section-heading { /* заголовок секции h2 */
+  font-weight: 600; /* полужирный */
+  font-size: 1.5rem; /* размер */
+  line-height: 1.2083; /* высота строки */
+  margin: 0; /* сброс отступов */
+} /* конец .section-heading */
 
-.inputs-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+.inputs-wrapper { /* группа полей ввода */
+  display: flex; /* колонка */
+  flex-direction: column; /* вертикально */
+  gap: 1.5rem; /* между группами */
+} /* конец .inputs-wrapper */
 
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-}
+.input-group { /* label + input */
+  display: flex; /* колонка */
+  flex-direction: column; /* вертикально */
+  gap: 0.5rem; /* между label и полем */
+  width: 100%; /* полная ширина */
+} /* конец .input-group */
 
-.input-label {
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.2143;
-}
+.input-label { /* подпись к полю */
+  font-weight: 500; /* средняя насыщенность */
+  font-size: 0.875rem; /* 14px при 1rem=16px */
+  line-height: 1.2143; /* межстрочный */
+} /* конец .input-label */
 
-.form-input {
-  box-sizing: border-box;
-  width: 100%;
-  height: 3.25rem;
-  background: #FBF6F3;
-  border: 0.0625rem solid rgba(0, 0, 0, 0.08);
-  border-radius: 0.375rem;
-  padding: 0 1rem;
-  font-size: 0.9375rem;
-  color: #2E2A28;
-  outline: none;
-  transition: border-color 0.2s;
-}
+.form-input { /* input, select, textarea с этим классом */
+  box-sizing: border-box; /* padding в ширине */
+  width: 100%; /* на всю ширину группы */
+  height: 3.25rem; /* фиксированная высота однострочного поля */
+  background: #FBF6F3; /* светлый фон поля */
+  border: 0.0625rem solid rgba(0, 0, 0, 0.08); /* тонкая рамка */
+  border-radius: 0.375rem; /* скругление */
+  padding: 0 1rem; /* горизонтальные поля текста */
+  font-size: 0.9375rem; /* размер ввода */
+  color: #2E2A28; /* цвет текста */
+  outline: none; /* убрать дефолтный outline */
+  transition: border-color 0.2s; /* плавная смена рамки */
+} /* конец .form-input */
 
-.form-input::placeholder {
-  color: #8A7F7B;
-}
+.form-input::placeholder { /* плейсхолдер */
+  color: #8A7F7B; /* приглушённый */
+} /* конец .form-input::placeholder */
 
-.form-input:focus {
-  border-color: #6B3E26;
-}
+.form-input:focus { /* фокус клавиатуры */
+  border-color: #6B3E26; /* акцентная рамка */
+} /* конец .form-input:focus */
 
-.static-text {
-  display: flex;
-  align-items: center;
-}
+.static-text { /* блок текста вместо input */
+  display: flex; /* для выравнивания многострочного текста */
+  align-items: center; /* по вертикали */
+} /* конец .static-text */
 
-.form-textarea {
-  height: 3.125rem;
-  padding-top: 1rem;
-  resize: vertical;
-}
+.form-textarea { /* многострочное поле */
+  height: 3.125rem; /* стартовая высота (ниже обычного input) */
+  padding-top: 1rem; /* отступ сверху внутри */
+  resize: vertical; /* разрешить тянуть за угол по вертикали */
+} /* конец .form-textarea */
 
-.radio-option {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0 1.25rem;
-  gap: 0.75rem;
-  height: 3.5rem;
-  background: #E8D7CC;
-  border: 0.0625rem solid #6B3E26;
-  border-radius: 0.375rem;
-  cursor: pointer;
-}
+.radio-option { /* кастомная кнопка-«радио» */
+  display: flex; /* круг и текст в ряд */
+  flex-direction: row; /* горизонтально */
+  align-items: center; /* по центру вертикали */
+  padding: 0 1.25rem; /* горизонтальные поля */
+  gap: 0.75rem; /* между кругом и подписью */
+  height: 3.5rem; /* высота строки */
+  background: #E8D7CC; /* фон активного вида */
+  border: 0.0625rem solid #6B3E26; /* рамка */
+  border-radius: 0.375rem; /* скругление */
+  cursor: pointer; /* кликабельно */
+} /* конец .radio-option */
 
-.radio-circle {
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 0.125rem solid #6B3E26;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
+.radio-circle { /* внешнее кольцо переключателя */
+  width: 1.25rem; /* размер */
+  height: 1.25rem; /* размер */
+  border: 0.125rem solid #6B3E26; /* обводка кольца */
+  border-radius: 50%; /* круг */
+  display: flex; /* центрировать внутреннюю точку */
+  justify-content: center; /* по горизонтали */
+  align-items: center; /* по вертикали */
+  flex-shrink: 0; /* не сжимать */
+} /* конец .radio-circle */
 
-.radio-inner {
-  width: 0.625rem;
-  height: 0.625rem;
-  background: #6B3E26;
-  border-radius: 50%;
-}
+.radio-inner { /* выбранная точка внутри кольца */
+  width: 0.625rem; /* диаметр */
+  height: 0.625rem; /* диаметр */
+  background: #6B3E26; /* заливка */
+  border-radius: 50%; /* круг */
+} /* конец .radio-inner */
 
-.radio-text {
-  font-weight: 500;
-  font-size: 0.9375rem;
-}
+.radio-text { /* подпись способа оплаты */
+  font-weight: 500; /* вес */
+  font-size: 0.9375rem; /* размер */
+} /* конец .radio-text */
 
-.payment-options {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  width: 100%;
-}
+.payment-options { /* ряд из двух радио-опций */
+  display: flex; /* в строку */
+  flex-direction: row; /* явно горизонтально */
+  gap: 1rem; /* между опциями */
+  width: 100%; /* на всю ширину */
+} /* конец .payment-options */
 
-.payment-options .radio-option {
-  flex: 1;
-  justify-content: flex-start;
-}
+.payment-options .radio-option { /* опции внутри блока оплаты */
+  flex: 1; /* поровну делят ширину */
+  justify-content: flex-start; /* контент к левому краю опции */
+} /* конец .payment-options .radio-option */
 
-.radio-option.active {
-  background: #E8D7CC;
-  border: 0.0625rem solid #6B3E26;
-}
+.radio-option.active { /* выбранная опция */
+  background: #E8D7CC; /* фон */
+  border: 0.0625rem solid #6B3E26; /* рамка */
+} /* конец .radio-option.active */
 
-.radio-option.inactive {
-  background: #FBF6F3;
-  border: 0.0625rem solid rgba(0, 0, 0, 0.08);
-}
+.radio-option.inactive { /* невыбранная опция */
+  background: #FBF6F3; /* светлее фон */
+  border: 0.0625rem solid rgba(0, 0, 0, 0.08); /* слабая рамка */
+} /* конец .radio-option.inactive */
 
-.radio-circle.gray-border {
-  border-color: rgba(0, 0, 0, 0.08);
-}
+.radio-circle.gray-border { /* кольцо в неактивной опции */
+  border-color: rgba(0, 0, 0, 0.08); /* серая обводка */
+} /* конец .radio-circle.gray-border */
 
-.placeholder-style {
-  color: #8A7F7B;
-}
+.placeholder-style { /* класс для приглушённого текста-подсказки */
+  color: #8A7F7B; /* цвет */
+} /* конец .placeholder-style */
 
-@media (max-width: 37.5rem) {
-  .payment-options {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-}
+@media (max-width: 37.5rem) { /* 600px */
+  .payment-options { /* оплата столбиком */
+    flex-direction: column; /* вертикально */
+    gap: 0.75rem; /* меньше зазор */
+  } /* конец .payment-options */
+} /* конец media 37.5rem */
 
-@media (max-width: 30rem) {
-  .checkout-container {
-    gap: 2rem;
-    padding: 1rem;
-  }
-  .section-heading {
-    font-size: 1.25rem;
-  }
-  .form-input {
-    height: 3rem;
-  }
-}
+@media (max-width: 30rem) { /* 480px */
+  .checkout-container { /* ещё компактнее форма */
+    gap: 2rem; /* между секциями */
+    padding: 1rem; /* поля */
+  } /* конец .checkout-container */
+  .section-heading { /* меньше заголовки */
+    font-size: 1.25rem; /* размер */
+  } /* конец .section-heading */
+  .form-input { /* ниже поля */
+    height: 3rem; /* высота */
+  } /* конец .form-input */
+} /* конец media 30rem */
 
-.order-summary {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 100%;
-  max-width: 27.5rem;
-  padding: 2.5rem;
-  background: #E8D7CC;
-  border-radius: 0.5rem;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
+.order-summary { /* вторая декларация: оформление карточки корзины */
+  display: flex; /* колонка */
+  flex-direction: column; /* блоки друг под другом */
+  gap: 2rem; /* между заголовком, списком, футером */
+  width: 100%; /* ширина */
+  max-width: 27.5rem; /* предел */
+  padding: 2.5rem; /* внутренние поля «карточки» */
+  background: #E8D7CC; /* фон боковой панели */
+  border-radius: 0.5rem; /* скругление */
+  box-sizing: border-box; /* модель размеров */
+  font-family: 'Inter', sans-serif; /* шрифт */
+} /* конец второй .order-summary */
 
-.summary-title {
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1.2083;
-  color: #2E2A28;
-  margin: 0;
-}
+.summary-title { /* «Ваш заказ» */
+  font-weight: 600; /* полужирный */
+  font-size: 1.5rem; /* размер */
+  line-height: 1.2083; /* межстрочный */
+  color: #2E2A28; /* цвет */
+  margin: 0; /* сброс */
+} /* конец .summary-title */
 
-.summary-items {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+.summary-items { /* список позиций */
+  display: flex; /* колонка */
+  flex-direction: column; /* вертикально */
+  gap: 1.5rem; /* между товарами */
+} /* конец .summary-items */
 
-.summary-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-}
+.summary-item { /* одна строка товара */
+  display: flex; /* в ряд */
+  flex-direction: row; /* горизонтально */
+  align-items: center; /* по вертикали центр */
+  gap: 1rem; /* между миниатюрой, текстом и действиями */
+} /* конец .summary-item */
 
-.item-image {
-  width: 4.5rem;
-  height: 4.5rem;
-  background-size: cover;
-  background-position: center;
-  background-color: #d1c1b7;
-  border-radius: 0.375rem;
-  flex-shrink: 0;
-}
+.item-image { /* превью из background-image в JSX */
+  width: 4.5rem; /* ширина */
+  height: 4.5rem; /* высота */
+  background-size: cover; /* заполнить квадрат */
+  background-position: center; /* центрировать картинку */
+  background-color: #d1c1b7; /* цвет до загрузки фона */
+  border-radius: 0.375rem; /* скругление */
+  flex-shrink: 0; /* не сжимать */
+} /* конец .item-image */
 
-.item-info {
-  flex-grow: 1;
-}
+.item-info { /* название и описание */
+  flex-grow: 1; /* занять свободное место */
+} /* конец .item-info */
 
-.item-name {
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.1875;
-  color: #2E2A28;
-  margin: 0 0 0.375rem 0;
-}
+.item-name { /* название товара */
+  font-weight: 600; /* полужирный */
+  font-size: 1rem; /* размер */
+  line-height: 1.1875; /* межстрочный */
+  color: #2E2A28; /* цвет */
+  margin: 0 0 0.375rem 0; /* снизу небольшой отступ */
+} /* конец .item-name */
 
-.item-desc {
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.2143;
-  color: #8A7F7B;
-  margin: 0;
-}
+.item-desc { /* подпись (напр. «Стандартный») */
+  font-weight: 400; /* обычный */
+  font-size: 0.875rem; /* размер */
+  line-height: 1.2143; /* межстрочный */
+  color: #8A7F7B; /* приглушённый */
+  margin: 0; /* сброс */
+} /* конец .item-desc */
 
-.item-price {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #2E2A28;
-  white-space: nowrap;
-}
+.item-price { /* цена в строке */
+  font-weight: 600; /* полужирный */
+  font-size: 1rem; /* размер */
+  color: #2E2A28; /* цвет */
+  white-space: nowrap; /* не переносить BYN */
+} /* конец .item-price */
 
-.summary-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 1.5rem;
-  border-top: 0.0625rem solid rgba(0, 0, 0, 0.08);
-}
+.summary-footer { /* блок итого и кнопки */
+  display: flex; /* колонка */
+  flex-direction: column; /* вертикально */
+  gap: 1rem; /* между строками */
+  padding-top: 1.5rem; /* отступ от списка */
+  border-top: 0.0625rem solid rgba(0, 0, 0, 0.08); /* линия-разделитель */
+} /* конец .summary-footer */
 
-.summary-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1rem;
-  color: #8A7F7B;
-}
+.summary-row { /* строка «Товары» / сумма */
+  display: flex; /* в ряд */
+  justify-content: space-between; /* текст слева и справа */
+  font-size: 1rem; /* размер */
+  color: #8A7F7B; /* цвет вторичной строки */
+} /* конец .summary-row */
 
-.summary-row.total {
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: #2E2A28;
-  margin-top: 0.5rem;
-}
+.summary-row.total { /* строка итого */
+  font-weight: 600; /* жирнее */
+  font-size: 1.25rem; /* крупнее */
+  color: #2E2A28; /* основной цвет */
+  margin-top: 0.5rem; /* отступ сверху */
+} /* конец .summary-row.total */
 
-.submit-button {
-  width: 100%;
-  height: 3.5rem;
-  background: #6B3E26;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 0.375rem;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 1rem;
-}
+.submit-button { /* кнопка отправки заказа */
+  width: 100%; /* на всю ширину summary */
+  height: 3.5rem; /* высота */
+  background: #6B3E26; /* коричневая заливка */
+  color: #FFFFFF; /* белый текст */
+  border: none; /* без рамки */
+  border-radius: 0.375rem; /* скругление */
+  font-weight: 600; /* полужирный */
+  font-size: 1rem; /* размер */
+  cursor: pointer; /* рука */
+  transition: background 0.2s; /* плавная смена фона */
+  margin-top: 1rem; /* отступ от строк итого */
+} /* конец .submit-button */
 
-.submit-button:hover {
-  background: #54301e;
-}
+.submit-button:hover { /* наведение */
+  background: #54301e; /* темнее коричневый */
+} /* конец .submit-button:hover */
 
-@media (max-width: 62rem) {
-  .order-summary {
-    max-width: 100%;
-    padding: 1.5rem;
-  }
-}
+@media (max-width: 62rem) { /* ~992px */
+  .order-summary { /* на средних экранах шире */
+    max-width: 100%; /* во всю ширину колонки */
+    padding: 1.5rem; /* меньше поля */
+  } /* конец .order-summary */
+} /* конец media 62rem */
 
-@media (max-width: 30rem) {
-  .item-image {
-    width: 3.75rem;
-    height: 3.75rem;
-  }
-  .summary-title {
-    font-size: 1.25rem;
-  }
-}
+@media (max-width: 30rem) { /* мобильный summary */
+  .item-image { /* меньше превью */
+    width: 3.75rem; /* ширина */
+    height: 3.75rem; /* высота */
+  } /* конец .item-image */
+  .summary-title { /* меньше заголовок */
+    font-size: 1.25rem; /* размер */
+  } /* конец .summary-title */
+} /* конец media 30rem второй */
 
-.item-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-left: 0.625rem;
-}
+.item-actions { /* правая колонка в строке товара: цена + удалить */
+  display: flex; /* колонка */
+  flex-direction: column; /* цена над крестиком */
+  align-items: flex-end; /* прижать к правому краю */
+  justify-content: space-between; /* распределить по вертикали */
+  margin-left: 0.625rem; /* отступ от текста */
+} /* конец .item-actions */
 
-.delete-btn {
-  background-color: #ff4d4d;
-  border: none;
-  border-radius: 0.25rem;
-  color: #ffffff;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  line-height: 1;
-  cursor: pointer;
-  margin-top: 0.3125rem;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
+.delete-btn { /* кнопка удаления позиции */
+  background-color: #ff4d4d; /* красный фон */
+  border: none; /* без рамки */
+  border-radius: 0.25rem; /* скругление */
+  color: #ffffff; /* белый крестик */
+  width: 2rem; /* ширина */
+  height: 2rem; /* высота */
+  display: flex; /* центрировать × */
+  align-items: center; /* по вертикали */
+  justify-content: center; /* по горизонтали */
+  font-size: 1.25rem; /* размер символа */
+  line-height: 1; /* компактная строка */
+  cursor: pointer; /* рука */
+  margin-top: 0.3125rem; /* отступ от цены */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* анимации */
+} /* конец .delete-btn */
 
-.delete-btn:hover {
-  background-color: #cc0000;
-  transform: scale(1.1);
-}
+.delete-btn:hover { /* наведение на удаление */
+  background-color: #cc0000; /* темнее красный */
+  transform: scale(1.1); /* лёгкое увеличение */
+} /* конец .delete-btn:hover */
 
-.empty-cart-text {
-  text-align: center;
-  color: #888;
-  padding: 1.25rem 0;
-  font-size: 1rem;
-}
+.empty-cart-text { /* текст при пустой корзине */
+  text-align: center; /* по центру */
+  color: #888; /* серый */
+  padding: 1.25rem 0; /* вертикальные поля */
+  font-size: 1rem; /* размер */
+} /* конец .empty-cart-text */
 
-.submit-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-  opacity: 0.7;
-}
+.submit-button:disabled { /* кнопка при disabled в JSX */
+  background-color: #cccccc; /* серый фон */
+  cursor: not-allowed; /* курсор «запрещено» */
+  opacity: 0.7; /* визуально приглушить */
+} /* конец .submit-button:disabled */

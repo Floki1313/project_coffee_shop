@@ -1,19 +1,26 @@
+/**
+ * Секция меню «Эспрессо-бар»: заголовок категории и сетка карточек с кнопкой добавления в корзину.
+ * Каждая позиция — отдельный CardWithButton; изображения подключаются через import 
+ */
 import React from "react";
 import CardWithButton from "../templates/CardWithButton";
 import "./Sections.css"
+// Ниже — импорты SVG
 import classicCappuccino from "../../img/classicCappuccino.svg"
 import vanillaLatte from "../../img/vanillaLatte.svg"
-import doubleEspresso from "../../img/doubleEspresso.svg"; 
-import ethiopianPour_over from "../../img/ethiopianPour_over.svg"; 
-import flatWhite from "../../img/flatWhite.svg"; 
-import mocha from "../../img/mocha.svg"; 
-import americano from "../../img/americano.svg"; 
-import hazelnutLatte from "../../img/hazelnutLatte.svg"; 
+import doubleEspresso from "../../img/doubleEspresso.svg";
+import ethiopianPour_over from "../../img/ethiopianPour_over.svg";
+import flatWhite from "../../img/flatWhite.svg";
+import mocha from "../../img/mocha.svg";
+import americano from "../../img/americano.svg";
+import hazelnutLatte from "../../img/hazelnutLatte.svg";
 
+/** @param {function} onAdd — колбэк добавления товара (из Layout через MenuCont) */
 const EspressoSection = ({onAdd}) => {
 
     return(
         <div className="section-wrapper">
+            {/* Заголовок категории */}
             <div className="category-heading">
                 <h1 className="category-title">Эспрессо-бар</h1>
                 <div className="reveal-bg"></div>

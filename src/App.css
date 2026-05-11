@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
-}
+/* Стили шаблона CRA для демо-компонента App — сейчас в разметке почти не используются */ /* пояснение файла */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.App { /* корневой класс из import './App.css' в App.js */
+  text-align: center; /* горизонтальное выравнивание текста по центру */
+} /* конец .App */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.App-logo { /* картинка-логотип в стартовом шаблоне React */
+  height: 40vmin; /* высота относительно меньшей стороны окна */
+  pointer-events: none; /* отключить клики по SVG/картинке */
+} /* конец .App-logo */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@media (prefers-reduced-motion: no-preference) { /* медиа: пользователь не просил уменьшить анимации */
+  .App-logo { /* тот же логотип внутри условия */
+    animation: App-logo-spin infinite 20s linear; /* бесконечное вращение 20 с, линейно */
+  } /* конец .App-logo внутри media */
+} /* конец @media reduced-motion */
 
-.App-link {
-  color: #61dafb;
-}
+.App-header { /* верхний тёмный блок приветствия CRA */
+  background-color: #282c34; /* тёмно-серый фон */
+  min-height: 100vh; /* минимум на весь экран по высоте */
+  display: flex; /* flex-контейнер */
+  flex-direction: column; /* дети столбцом */
+  align-items: center; /* выравнивание поперечной оси по центру */
+  justify-content: center; /* выравнивание главной оси по центру */
+  font-size: calc(10px + 2vmin); /* плавный размер шрифта от окна */
+  color: white; /* светлый текст на тёмном фоне */
+} /* конец .App-header */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.App-link { /* ссылка learn react в демо */
+  color: #61dafb; /* бирюзовый акцент ссылок CRA */
+} /* конец .App-link */
+
+@keyframes App-logo-spin { /* имя анимации совпадает с animation выше */
+  from { /* начальный кадр */
+    transform: rotate(0deg); /* без поворота */
+  } /* конец from */
+  to { /* конечный кадр */
+    transform: rotate(360deg); /* полный оборот */
+  } /* конец to */
+} /* конец keyframes */

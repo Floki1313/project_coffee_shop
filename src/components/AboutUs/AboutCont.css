@@ -1,193 +1,174 @@
-.hero-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-section { /* первая большая секция «О нас» */
+  display: flex; /* flex для центрирования содержимого */
+  align-items: center; /* по вертикали центр */
+  justify-content: center; /* по горизонтали центр */
+  min-height: 35rem; /* высота секции */
+  padding: 5rem 1.25rem; /* поля */
+  background: #E8D7CC; /* розово-бежевый фон */
+  box-sizing: border-box; /* padding в ширине */
+} /* конец .hero-section */
 
-  min-height: 35rem; 
+.hero-section-2 { /* вторая секция с другим фоном */
+  display: flex; /* flex */
+  align-items: center; /* вертикальное центрирование */
+  justify-content: center; /* горизонтальное центрирование */
+  min-height: 35rem; /* такая же минимальная высота */
+  padding: 5rem 1.25rem; /* поля */
+  background: #FBF6F3; /* более светлый фон */
+  box-sizing: border-box; /* модель размеров */
+} /* конец .hero-section-2 */
 
-  padding: 5rem 1.25rem;
-  background: #E8D7CC;
-  box-sizing: border-box;
-}
+.hero-container { /* контейнер текста и картинки */
+  display: flex; /* две колонки */
+  flex-direction: row; /* слева направо */
+  align-items: center; /* по вертикали */
+  justify-content: space-between; /* текст и фото по краям */
+  gap: 2.5rem; /* зазор между колонками */
+  max-width: 82rem; /* ограничение ширины */
+  width: 100%; /* на доступную ширину */
+  margin: 0 auto; /* центрирование блока */
+} /* конец .hero-container */
 
-.hero-section-2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-content { /* текстовая колонка */
+  display: flex; /* вертикальный стек */
+  flex-direction: column; /* колонка */
+  gap: 1.5rem; /* между абзацами */
+  flex: 1; /* доля ширины */
+  max-width: 39rem; /* ограничение текста */
+} /* конец .hero-content */
 
-  min-height: 35rem; 
+.hero-title { /* крупный заголовок секции */
+  font-family: 'Inter', sans-serif; /* шрифт */
+  font-weight: 700; /* жирный */
+  font-size: clamp(2rem, 5vw, 3.5rem); /* отзывчивый размер */
+  line-height: 1.1; /* плотный */
+  color: #2E2A28; /* почти чёрный коричневый */
+  margin: 0; /* сброс margin заголовка */
+} /* конец .hero-title */
 
-  padding: 5rem 1.25rem;
-  background: #FBF6F3;
-  box-sizing: border-box;
-}
+.hero-description { /* абзац описания */
+  font-family: 'Inter', sans-serif; /* шрифт */
+  font-weight: 500; /* средняя насыщенность */
+  font-size: 1.125rem; /* ~18px */
+  line-height: 1.6; /* читаемый интервал */
+  color: #2E2A28; /* цвет текста */
+  max-width: 36rem; /* длина строки */
+  padding-top: 1rem; /* отступ сверху от предыдущего блока */
+} /* конец .hero-description */
 
+.hero-img { /* изображение в секции */
+  flex: 1; /* доля ширины */
+  max-width: 39rem; /* ограничение */
+  aspect-ratio: 624 / 400; /* сохранять пропорции */
+  border-radius: 0.5rem; /* скругление */
+  overflow: hidden; /* обрезка по радиусу */
+} /* конец .hero-img */
 
-.hero-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+@media (max-width: 64rem) { /* 1024px и меньше */
+  .hero-container { /* колонки вертикально */
+    flex-direction: column; /* стек */
+    text-align: center; /* текст по центру */
+    align-items: center; /* выровнять flex-детей */
+  } /* конец .hero-container */
 
-  gap: 2.5rem;
+  .hero-content { /* контент по центру */
+    align-items: center; /* центрировать дочерние блоки */
+  } /* конец .hero-content */
 
-  max-width: 82rem;
-  width: 100%;
-  margin: 0 auto;
-}
+  .hero-image-wrapper { /* запасной класс-обёртка (если появится в JSX) */
+    width: 100%; /* на всю ширину */
+    max-width: 100%; /* без ограничения */
+  } /* конец .hero-image-wrapper */
+} /* конец media 64rem */
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 30rem) { /* очень узкие экраны */
+  .hero-section { /* первая секция — меньше поля */
+    padding: 2.5rem 1rem; /* компактные отступы */
+  } /* конец .hero-section */
+} /* конец media 30rem */
 
-  gap: 1.5rem;
-  flex: 1;
+.values { /* блок «Наши ценности» */
+  display: flex; /* колонка */
+  flex-direction: column; /* вертикально */
+  align-items: flex-start; /* прижать к левому (заголовок на всю ширину центрируется сам) */
+  padding: 5rem 4rem 6.5rem; /* поля секции */
+  gap: 3rem; /* между заголовком и сеткой */
+  background: #E8D7CC; /* фон секции */
+  font-family: 'Inter', sans-serif; /* базовый шрифт секции */
+} /* конец .values */
 
-  max-width: 39rem;
-}
+.values_title { /* заголовок «Наши ценности» */
+  width: 100%; /* на всю ширину для text-align */
+  margin: 0; /* сброс */
+  font-weight: 700; /* жирный */
+  font-size: 2.25rem; /* размер */
+  line-height: 1.2; /* межстрочный */
+  text-align: center; /* по центру */
+  color: #2E2A28; /* цвет */
+} /* конец .values_title */
 
-.hero-title {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
- 
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.1;
-  color: #2E2A28;
-  margin: 0;
-}
+.values_container { /* сетка из трёх карточек */
+  display: grid; /* grid */
+  grid-template-columns: repeat(3, 1fr); /* три равные колонки */
+  gap: 2rem; /* между карточками */
+  width: 100%; /* ширина */
+  max-width: 82rem; /* ограничение */
+  margin: 0 auto; /* центрирование */
+} /* конец .values_container */
 
-.hero-description {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: #2E2A28;
- 
-  max-width: 36rem;
-  padding-top:1rem;
-}
+.value-card { /* одна карточка ценности */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* анимация hover */
+  box-sizing: border-box; /* модель размеров */
+  display: flex; /* flex внутри карточки */
+  flex-direction: column; /* вертикальный стек */
+  align-items: center; /* центрировать иконку и текст */
+  justify-content: center; /* центрировать по вертикали */
+  padding: 2rem; /* поля карточки */
+  gap: 1rem; /* между элементами */
+  background: #FFFFFF; /* белый фон */
+  border: 0.0625rem solid rgba(0, 0, 0, 0.08); /* лёгкая рамка */
+  border-radius: 0.5rem; /* скругление */
+  min-height: 15rem; /* минимальная высота ряда */
+  text-align: center; /* текст по центру */
+} /* конец .value-card */
 
-.hero-img {
-  flex: 1;
-  max-width: 39rem;
+.value-card:hover { /* наведение на карточку */
+  transform: translateY(-0.625rem); /* поднять */
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.1); /* тень */
+} /* конец .value-card:hover */
 
-  aspect-ratio: 624 / 400;
-  
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
+.value-card_icon { /* круг под SVG-иконкой */
+  width: 3rem; /* ширина */
+  height: 3rem; /* высота */
+  background: #F3EDEB; /* фон круга */
+  border-radius: 50%; /* круг */
+  display: flex; /* центрировать иконку */
+  align-items: center; /* по вертикали */
+  justify-content: center; /* по горизонтали */
+} /* конец .value-card_icon */
 
+.value-card_heading { /* подзаголовок карточки */
+  margin: 0; /* сброс */
+  font-weight: 600; /* полужирный */
+  font-size: 1.25rem; /* размер */
+  line-height: 1.5rem; /* высота строки */
+  color: #2E2A28; /* цвет */
+} /* конец .value-card_heading */
 
+.value-card_text { /* текст карточки */
+  margin: 0; /* сброс */
+  font-weight: 500; /* средняя насыщенность */
+  font-size: 0.9375rem; /* ~15px */
+  line-height: 1.55; /* читаемость */
+  color: #8A7F7B; /* приглушённый */
+  max-width: 21.875rem; /* ограничить длину строки */
+} /* конец .value-card_text */
 
-
-@media (max-width: 64rem) { 
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-
-  .hero-content {
-    align-items: center;
-  }
-
-  .hero-image-wrapper {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 30rem) { 
-  .hero-section {
-    padding: 2.5rem 1rem;
-  }
-}
-
-.values {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 5rem 4rem 6.5rem; 
-  gap: 3rem; 
-  background: #E8D7CC;
-  font-family: 'Inter', sans-serif;
-}
-
-.values_title {
-  width: 100%;
-  margin: 0;
-  font-weight: 700;
-  font-size: 2.25rem; 
-  line-height: 1.2;
-  text-align: center;
-  color: #2E2A28;
-}
-
-.values_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem; 
-  width: 100%;
-  max-width: 82rem; 
-  margin: 0 auto;
-}
-
-.value-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem; 
-  gap: 1rem; 
-  background: #FFFFFF;
-  border: 0.0625rem solid rgba(0, 0, 0, 0.08); 
-  border-radius: 0.5rem; 
-  min-height: 15rem; 
-  text-align: center;
-}
-
-.value-card:hover {
-  
-  transform: translateY(-0.625rem); 
-  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.1);
-}
-
-.value-card_icon {
-  width: 3rem; 
-  height: 3rem; 
-  background: #F3EDEB;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.value-card_heading {
-  margin: 0;
-  font-weight: 600;
-  font-size: 1.25rem; 
-  line-height: 1.5rem; 
-  color: #2E2A28;
-}
-
-.value-card_text {
-  margin: 0;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: #8A7F7B;
-  max-width: 21.875rem; 
-}
-
-@media (max-width: 64rem) { 
-  .values_container {
-    grid-template-columns: 1fr;
-  }
-  .values {
-    padding: 2.5rem 1.25rem;
-  }
-}
-
+@media (max-width: 64rem) { /* планшет и мобильный */
+  .values_container { /* одна колонка карточек */
+    grid-template-columns: 1fr; /* один трек */
+  } /* конец .values_container */
+  .values { /* меньше поля секции */
+    padding: 2.5rem 1.25rem; /* компактнее */
+  } /* конец .values */
+} /* конец media 64rem */

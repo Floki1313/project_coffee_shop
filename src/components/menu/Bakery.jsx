@@ -1,3 +1,6 @@
+/**
+ * Секция «Выпечка и еда»: круассаны, десерты, тосты и т.п.
+ */
 import React from "react";
 import CardWithButton from "../templates/CardWithButton";
 import "./Sections.css"
@@ -10,6 +13,7 @@ import trifle from "../../img/trifle.svg";
 import macaron from "../../img/macaron.svg"; 
 import brownie from "../../img/brownie.svg"; 
 
+/** @param {function} onAdd — добавление в корзину */
 const Bakery = ({onAdd}) => {
 
     return(

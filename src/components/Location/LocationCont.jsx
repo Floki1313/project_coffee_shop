@@ -1,9 +1,17 @@
+/**
+ * Страница «Локации»: интерактивная карта (Яндекс.Карты через @pbe/react-yandex-maps),
+ * список карточек кофеен с кнопкой «Построить маршрут» (открывает Яндекс.Карты в новой вкладке),
+ * нижний блок с графиком и удобствами.
+ */
 import React from "react";
+// Обёртка над API Яндекс.Карт: YMaps — провайдер контекста, Map — виджет, Placemark — метка
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import "./LocationCont.css";
+// Иконки для строк в карточках локаций (адрес, время, описание)
 import Loc from "../../icons/Loc.svg"
 import Time from "../../icons/Time.svg"
 import Logo1 from "../../icons/Logo1.svg"
+// Иконки пунктов списка «Что внутри» в нижней секции
 import in1 from "../../icons/in1.svg"
 import in2 from "../../icons/in2.svg"
 import in3 from "../../icons/in3.svg"
@@ -11,13 +19,14 @@ import in4 from "../../icons/in4.svg"
 
 const LocationCont = () => {
 
+  /** Координаты маркеров на карте [широта, долгота] в формате Яндекс API */
   const points = [
     { id: 1, coords: [53.893392, 27.556720], name: 'Ballu Свердлова 11' },
     { id: 2, coords: [53.909917, 27.496272], name: 'Ballu Притыцкого 28А' },
     { id: 3, coords: [53.908092, 27.549560], name: 'Ballu проспект Победителей 7' }
   ];
 
-
+  /** Расширенные данные для списка карточек под картой (адрес, часы, описание) */
   const locationsData = [
     {
       id: 1,
@@ -45,22 +54,26 @@ const LocationCont = () => {
     }
   ];
 
-
+  /**
+   * Открывает новую вкладку с маршрутом в Яндекс.Картах.
+   * coords — массив [широта, долгота] как в данных локаций (совпадает с Placemark.geometry).
+   * rtext=~lat,lon — в документации Яндекса: построить маршрут «до точки» от незаданной точки старта (пользователь уточнит в UI карт).
+   */
   const handleRoute = (coords) => {
-    const lat = coords[0];
-    const lon = coords[1];
-    
-    
-    const url = `https://yandex.ru/maps/?rtext=~${lat},${lon}`;
-    
-    window.open(url, '_blank');
+    const lat = coords[0]; // первый элемент массива — широта (для Минска ~53.9)
+    const lon = coords[1]; // второй — долгота (~27.5)
+
+    const url = `https://yandex.ru/maps/?rtext=~${lat},${lon}`; // шаблонная строка подставляет координаты
+
+    window.open(url, '_blank'); // второй аргумент _blank — не заменять текущую вкладку SPA
   };
 
   
 
   return (
     <div>
-  
+
+      {/* Верх: текст и встроенная карта */}
       <section className="hero-section">
         <div className="hero-content">
           <h1>Найдите ближайшее к вам кафе Ballu</h1>
@@ -76,14 +89,16 @@ const LocationCont = () => {
         </div>
 
         <div className="map-container">
+          {/* query.lang — русский интерфейс подсказок и балунов */}
           <YMaps query={{ lang: 'ru_RU' }}>
-            <Map 
+            <Map
               defaultState={{ center: [53.901064, 27.527767], zoom: 12 }} 
               width="100%" 
               height="100%"
             >
+              {/* Маркеры: Placemark — точка на карте; hint и balloon — подсказка и балун */}
               {points.map(point => (
-                <Placemark 
+                <Placemark
                   key={point.id}
                   geometry={point.coords}
                   properties={{
@@ -101,6 +116,7 @@ const LocationCont = () => {
         </div>
       </section>
 
+      {/* Сетка карточек локаций; данные из locationsData */}
       <section className="locations-list-section">
         <div className="locations-header">
           <h2>Наши локации</h2>
@@ -141,7 +157,7 @@ const LocationCont = () => {
         </div>
       </section>
 
-    
+      {/* Нижний блок: часы работы и список удобств */}
 <section class="plan-visit-section">
   <div class="plan-visit-container">
     

@@ -1,3 +1,6 @@
+/**
+ * Секция «Чай»: разные виды чая в единой сетке карточек.
+ */
 import React from "react";
 import CardWithButton from "../templates/CardWithButton";
 import "./Sections.css"
@@ -10,6 +13,7 @@ import yellowTea from "../../img/yellowTea.svg";
 import matchaTea from "../../img/matchaTea.svg"; 
 import masalaTea from "../../img/masalaTea.svg"; 
 
+/** @param {function} onAdd — колбэк корзины */
 const Tea = ({onAdd}) => {
 
     return(

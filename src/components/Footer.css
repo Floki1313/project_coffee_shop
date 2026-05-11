@@ -1,118 +1,112 @@
+.footer { /* корневой элемент подвала из Footer.jsx */
+  width: 100%; /* на всю ширину области просмотра */
+  background-color: #2C1A14; /* тёмный фон подвала */
+  padding: 4rem 4rem; /* вертикальные и горизонтальные поля секции */
+  display: flex; /* flex для центрирования внутреннего контейнера */
+  justify-content: center; /* центрируем .footer-container по горизонтали */
+  box-sizing: border-box; /* padding учитывается в ширине */
+} /* конец .footer */
 
-.footer {
-  width: 100%;
-  background-color: #2C1A14; 
-  padding: 4rem 4rem;       
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
+.footer-container { /* ограничитель ширины и ряд колонок */
+  width: 100%; /* занять доступную ширину родителя */
+  max-width: 90rem; /* не шире ~1440px при стандартном rem */
+  display: flex; /* колонки в строку */
+  flex-direction: row; /* главная ось слева направо */
+  justify-content: space-between; /* разнести колонки по краям */
+  align-items: flex-start; /* выровнять блоки по верхнему краю */
+  gap: 2rem; /* расстояние между колонками */
+} /* конец .footer-container */
 
-.footer-container {
-  width: 100%;
-  max-width: 90rem;          
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem; 
-}
+.footer-col { /* одна колонка ссылок или текста */
+  display: flex; /* вертикальный стек внутри колонки */
+  flex-direction: column; /* элементы друг под другом */
+  align-items: flex-start; /* прижать содержимое к левому краю колонки */
+  gap: 1rem; /* расстояние между элементами колонки */
+} /* конец .footer-col */
 
+.footer-col.info { /* модификатор: колонка с логотипом и описанием */
+  max-width: 15rem; /* сузить блок текста для читаемости строк */
+} /* конец .footer-col.info */
 
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;                 
-}
+.footer-logo { /* строка логотипа: картинка + текст */
+  display: flex; /* иконка и текст в ряд */
+  align-items: center; /* выровнять по вертикали центру */
+  gap: 0.5rem; /* зазор между иконкой и подписью */
+  height: 1.8125rem; /* фиксированная высота строки бренда */
+} /* конец .footer-logo */
 
+.logo-text-footer { /* название бренда в подвале */
+  font-family: 'Inter', sans-serif; /* гарнитура */
+  font-weight: 700; /* жирное начертание */
+  font-size: 1.5rem; /* крупный размер как в шапке */
+  color: #FDFBF7; /* светлый цвет на тёмном фоне */
+} /* конец .logo-text-footer */
 
-.footer-col.info {
-  max-width: 15rem;       
-}
+.footer-description { /* вторичный текст под логотипом */
+  font-family: 'Inter', sans-serif; /* гарнитура */
+  font-weight: 400; /* обычная насыщенность */
+  font-size: 0.875rem; /* меньше заголовков колонок */
+  line-height: 1.375rem; /* межстрочный интервал */
+  color: #A38C7A; /* приглушённый цвет */
+} /* конец .footer-description */
 
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;               
-  height: 1.8125rem;         
-}
+.footer-title { /* заголовок группы ссылок */
+  font-family: 'Inter', sans-serif; /* гарнитура */
+  font-weight: 600; /* полужирный */
+  font-size: 1.125rem; /* крупнее ссылок */
+  line-height: 1.375rem; /* высота строки */
+  color: #EBE3D5; /* светлый акцент на тёмном */
+  margin-bottom: 0.5rem; /* отступ до списка ссылок */
+} /* конец .footer-title */
 
-.logo-text-footer {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;        
-  color: #FDFBF7;
-}
+.footer-nav { /* контейнер <nav> со ссылками */
+  display: flex; /* вертикальный список через flex */
+  flex-direction: column; /* колонка */
+  gap: 1rem; /* расстояние между ссылками */
+} /* конец .footer-nav */
 
-.footer-description {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 0.875rem;       
-  line-height: 1.375rem;     
-  color: #A38C7A;          
-}
+.footer-nav a { /* каждая ссылка внутри подвала */
+  text-decoration: none; /* без подчёркивания */
+  font-family: 'Inter', sans-serif; /* гарнитура */
+  font-weight: 400; /* обычный вес */
+  font-size: 0.875rem; /* размер текста ссылки */
+  line-height: 1.0625rem; /* компактная строка */
+  color: #A38C7A; /* цвет неактивной ссылки */
+  transition: color 0.2s ease; /* анимация смены цвета */
+} /* конец .footer-nav a */
 
-.footer-title {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 1.125rem;      
-  line-height: 1.375rem;     
-  color: #EBE3D5;          
-  margin-bottom: 0.5rem;     
-}
+.footer-nav a:hover { /* состояние наведения на ссылку */
+  color: #EBE3D5; /* осветлить текст */
+} /* конец .footer-nav a:hover */
 
+@media (max-width: 1024px) { /* планшеты и уже */
+  .footer-container { /* контейнер внутри брейкпоинта */
+    flex-wrap: wrap; /* разрешить перенос колонок */
+    gap: 3rem; /* увеличить вертикальный/горизонтальный зазор */
+  } /* конец .footer-container */
 
-.footer-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;              
-}
+  .footer-col { /* колонка при переносе */
+    min-width: 12.5rem; /* минимальная ширина ячейки в flex-wrap */
+  } /* конец .footer-col */
+} /* конец media 1024px */
 
-.footer-nav a {
-  text-decoration: none;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 0.875rem;     
-  line-height: 1.0625rem;   
-  color: #A38C7A;
-  transition: color 0.2s ease;
-}
+@media (max-width: 768px) { /* мобильные устройства */
+  .footer { /* подвал на узком экране */
+    padding: 3rem 1.25rem; /* меньше боковые поля */
+  } /* конец .footer */
 
-.footer-nav a:hover {
-  color: #EBE3D5;           
-}
+  .footer-container { /* колонка одна под другой */
+    flex-direction: column; /* вертикальный стек */
+    align-items: center; /* центрировать колонки */
+    text-align: center; /* центрировать текст внутри */
+    gap: 2.5rem; /* расстояние между секциями */
+  } /* конец .footer-container */
 
+  .footer-col { /* каждая колонка по центру */
+    align-items: center; /* центрировать flex-элементы */
+  } /* конец .footer-col */
 
-
-@media (max-width: 1024px) {
-  .footer-container {
-    flex-wrap: wrap;         
-    gap: 3rem;
-  }
-  
-  .footer-col {
-    min-width: 12.5rem;      
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    padding: 3rem 1.25rem;  
-  }
-
-  .footer-container {
-    flex-direction: column;  
-    align-items: center;
-    text-align: center;
-    gap: 2.5rem;
-  }
-
-  .footer-col {
-    align-items: center;    
-  }
-
-  .footer-col.info {
-    max-width: 100%;
-  }
-}
+  .footer-col.info { /* блок с описанием на мобильном */
+    max-width: 100%; /* разрешить тексту ширину экрана */
+  } /* конец .footer-col.info */
+} /* конец media 768px */

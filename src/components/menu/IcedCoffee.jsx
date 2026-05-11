@@ -1,3 +1,6 @@
+/**
+ * Секция «Холодный кофе»: колд брю, айс-напитки, тоник и т.д.
+ */
 import React from "react";
 import CardWithButton from "../templates/CardWithButton";
 import "./Sections.css"
@@ -10,6 +13,7 @@ import espressoShakenWithBrownSugar from "../../img/espressoShakenWithBrownSugar
 import iceMocha from "../../img/iceMocha.svg"; 
 import coldBrewWithOatMilk from "../../img/coldBrewWithOatMilk.svg"; 
 
+/** @param {function} onAdd — колбэк корзины */
 const IcedCoffee = ({onAdd}) => {
 
     return(

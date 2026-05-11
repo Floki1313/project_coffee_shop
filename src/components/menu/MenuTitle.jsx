@@ -1,3 +1,6 @@
+/**
+ * MenuTitle.jsx — только шапка страницы меню (заголовок + подзаголовок).
+ */
 import "./MenuTitle.css"
 
 const MenuTitle  = () => {

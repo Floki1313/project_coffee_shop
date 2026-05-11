@@ -1,6 +1,12 @@
+/**
+ * Страница «О нас»: несколько секций с текстом и изображениями, блок «Наши ценности» из трёх карточек.
+ * Данные статичны.
+ */
 import React from "react";
+// Большие иллюстрации для hero-секций (пути относительно этого файла)
 import coffeeShop from "../../img/coffeeShop.svg"
 import streetCoffee from "../../img/streetCoffee.svg"
+// Иконки для трёх карточек «ценности» (SVG как URL)
 import about1 from "../../icons/about1.svg"
 import about2 from "../../icons/Group.svg"
 import about3 from "../../icons/about3.svg"
@@ -8,9 +14,9 @@ import "./AboutCont.css"
 
 const AboutCont = () => {
 
-
     return(
         <div>
+            {/* Первый экран: миссия бренда + фото интерьера */}
             <section className="hero-section">
                 <div className="hero-container">
                     <div className="hero-content">
@@ -21,8 +27,7 @@ const AboutCont = () => {
                 </div>
             </section>
 
-
-
+            {/* Второй экран: фото улицы и блок «Наша история» (два абзаца) */}
             <section className="hero-section-2">
                 <div className="hero-container">
                     <img src={streetCoffee} alt="Бариста наливает кофе" className="hero-img"/>
@@ -35,6 +40,7 @@ const AboutCont = () => {
                 </div>
             </section>
 
+            {/* Три колонки-ценности с иконками; article улучшает семантику */}
             <section className="values">
                 <h2 className="values_title">Наши ценности</h2>
   

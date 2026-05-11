@@ -1,3 +1,6 @@
+/**
+ * Секция «Фирменные кофе» — нестандартные напитки (раф, бамбл, сырный латте, аффогато).
+ */
 import React from "react";
 import CardWithButton from "../templates/CardWithButton";
 import "./Sections.css"
@@ -7,6 +10,7 @@ import cheeseLatte from "../../img/cheeseLatte.svg";
 import affogato from "../../img/affogato.svg"; 
  
 
+/** @param {function} onAdd — добавление позиции в корзину */
 const SignatureCoffee = ({onAdd}) => {
 
     return(

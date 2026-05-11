@@ -1,68 +1,64 @@
-.filter-container {
-  width: 100%;
-  display: flex;
-  justify-content: center; 
-  padding: 2rem 5% 1rem;  
-     
-  box-sizing: border-box;
-}
+.filter-container { /* внешняя оболочка полосы фильтров */
+  width: 100%; /* на всю ширину */
+  display: flex; /* flex для центрирования ряда кнопок */
+  justify-content: center; /* по центру */
+  padding: 2rem 5% 1rem; /* верх, горизонталь в %, низ */
+  box-sizing: border-box; /* padding в ширине */
+} /* конец .filter-container */
 
-.filter-scroll {
-  display: flex;
-  flex-wrap: wrap;       
-  justify-content: center; 
-  gap: 0.75rem;            
-  max-width: 1200px;     
-}
+.filter-scroll { /* внутренний ряд кнопок */
+  display: flex; /* flex-ряд */
+  flex-wrap: wrap; /* перенос на вторую строку */
+  justify-content: center; /* центрировать ряд */
+  gap: 0.75rem; /* между кнопками */
+  max-width: 1200px; /* предел ширины кнопок */
+} /* конец .filter-scroll */
 
-.filter-btn {
-  all: unset;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
+.filter-btn { /* одна кнопка фильтра */
+  all: unset; /* сброс дефолтных стилей button */
+  cursor: pointer; /* курсор рука */
+  display: flex; /* центрировать текст */
+  align-items: center; /* по вертикали */
+  justify-content: center; /* по горизонтали */
+  transition: all 0.2s ease-in-out; /* плавные переходы */
+  padding: 0.625rem 1.5rem; /* поля капсулы */
+  height: 2.56rem; /* фиксированная высота */
+  border-radius: 6.25rem; /* «таблетка» */
+  white-space: nowrap; /* текст кнопки в одну строку */
+  font-family: 'Inter', sans-serif; /* шрифт */
+  font-weight: 600; /* полужирный */
+  font-size: clamp(0.85rem, 1.5vw, 0.93rem); /* отзывчивый размер */
+  background: #FFFFFF; /* фон неактивной */
+  border: 1px solid #EBE3D5; /* рамка */
+  color: #5C4033; /* цвет текста */
+} /* конец .filter-btn */
 
-  padding: 0.625rem 1.5rem; 
-  height: 2.56rem;          
-  border-radius: 6.25rem;   
-  white-space: nowrap;     
+.filter-btn:hover { /* наведение */
+  border-color: #8B5A2B; /* акцентная рамка */
+} /* конец .filter-btn:hover */
 
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: clamp(0.85rem, 1.5vw, 0.93rem); 
-  
-  background: #FFFFFF;
-  border: 1px solid #EBE3D5;
-  color: #5C4033;
-}
+.filter-btn.active { /* выбранный фильтр */
+  background: #8B5A2B; /* заливка */
+  border: 1px solid #8B5A2B; /* рамка того же цвета */
+  color: #FFFFFF; /* белый текст */
+} /* конец .filter-btn.active */
 
-.filter-btn:hover {
-  border-color: #8B5A2B;
-}
+@media (max-width: 768px) { /* мобильный */
+  .filter-container { /* прижать ленту к началу */
+    justify-content: flex-start; /* слева */
+  } /* конец .filter-container */
 
-.filter-btn.active {
-  background: #8B5A2B;
-  border: 1px solid #8B5A2B;
-  color: #FFFFFF;
-}
+  .filter-scroll { /* горизонтальная прокрутка */
+    flex-wrap: nowrap; /* одна строка */
+    overflow-x: auto; /* скролл по X */
+    width: 100%; /* на всю ширину */
+    justify-content: flex-start; /* слева */
+    padding-bottom: 0.5rem; /* место под скролл-палец */
+    -webkit-overflow-scrolling: touch; /* инерция iOS */
+    scrollbar-width: none; /* скрыть скроллбар Firefox */
+  } /* конец .filter-scroll */
 
-@media (max-width: 768px) {
-  .filter-container {
-    justify-content: flex-start; 
-  }
-  
-  .filter-scroll {
-    flex-wrap: nowrap;      
-    overflow-x: auto;       
-    width: 100%;
-    justify-content: flex-start;
-    padding-bottom: 0.5rem;    
-    -webkit-overflow-scrolling: touch; 
-    scrollbar-width: none;     
-  }
-
-  .filter-scroll::-webkit-scrollbar {
-    display: none;             
-  }
-}
+  .filter-scroll::-webkit-scrollbar { /* скроллбар WebKit */
+    display: none; /* полностью скрыть */
+  } /* конец псевдоэлемента */
+} /* конец media 768px */

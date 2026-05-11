@@ -1,50 +1,47 @@
-.menu-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
+.menu-header { /* верх страницы меню MenuTitle.jsx */
+  display: flex; /* flex-контейнер */
+  flex-direction: column; /* колонка */
+  align-items: center; /* по центру горизонтально */
+  justify-content: center; /* по центру вертикально */
+  padding: 4rem 2rem; /* поля блока */
+  gap: 1rem; /* между заголовком и подзаголовком */
+  width: 100%; /* на всю ширину */
+  min-height: 225px; /* минимальная высота шапки */
+  background: #F5EFEB; /* фон секции */
+  box-sizing: border-box; /* padding в ширине */
+} /* конец .menu-header */
 
-  padding: 4rem 2rem; 
-  gap: 1rem; 
-  
-  width: 100%;
-  min-height: 225px; 
-  background: #F5EFEB;
-  box-sizing: border-box;
-}
+.menu-header_content { /* внутренний ограничитель текста */
+  display: flex; /* колонка */
+  flex-direction: column; /* вертикально */
+  align-items: center; /* центрировать текстовые блоки */
+  max-width: 600px; /* максимальная ширина текста */
+  width: 100%; /* растянуть до max */
+  gap: 1rem; /* между title и subtitle */
+} /* конец .menu-header_content */
 
-.menu-header_content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 600px; 
-  width: 100%;
-  gap: 1rem;
-}
+.menu-header_title { /* класс для заголовка (если исправят опечатку в JSX) */
+  margin: 0; /* убрать внешние отступы h1 */
+  font-family: 'Inter', sans-serif; /* шрифт */
+  font-weight: 700; /* жирный */
+  font-size: clamp(2rem, 5vw, 3rem); /* отзывчивый размер */
+  line-height: 1.2; /* плотность строк */
+  text-align: center; /* по центру */
+  color: #2C1A14; /* цвет */
+} /* конец .menu-header_title */
 
-.menu-header_title {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: clamp(2rem, 5vw, 3rem); 
-  line-height: 1.2;
-  text-align: center;
-  color: #2C1A14;
-}
+.menu-header_subtitle { /* подзаголовок под «Наше меню» */
+  margin: 0; /* сброс */
+  font-family: 'Inter', sans-serif; /* шрифт */
+  font-weight: 400; /* обычный */
+  font-size: clamp(1rem, 2vw, 1.125rem); /* отзывчивый размер */
+  line-height: 1.5; /* читаемость */
+  text-align: center; /* по центру */
+  color: #5C4033; /* вторичный цвет */
+} /* конец .menu-header_subtitle */
 
-.menu-header_subtitle {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: clamp(1rem, 2vw, 1.125rem); 
-  line-height: 1.5; 
-  text-align: center;
-  color: #5C4033;
-}
-
-@media (max-width: 480px) {
-  .menu-header {
-    padding: 2.5rem 1rem;
-  }
-}
+@media (max-width: 480px) { /* маленькие телефоны */
+  .menu-header { /* компактнее поля */
+    padding: 2.5rem 1rem; /* уменьшенные отступы */
+  } /* конец .menu-header */
+} /* конец media 480px */
