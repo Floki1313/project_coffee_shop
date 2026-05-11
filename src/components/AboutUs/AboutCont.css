@@ -6,7 +6,7 @@
   padding: 5rem 1.25rem; /* поля */
   background: #E8D7CC; /* розово-бежевый фон */
   box-sizing: border-box; /* padding в ширине */
-} /* конец .hero-section */
+} 
 
 .hero-section-2 { /* вторая секция с другим фоном */
   display: flex; /* flex */
@@ -16,7 +16,7 @@
   padding: 5rem 1.25rem; /* поля */
   background: #FBF6F3; /* более светлый фон */
   box-sizing: border-box; /* модель размеров */
-} /* конец .hero-section-2 */
+}
 
 .hero-container { /* контейнер текста и картинки */
   display: flex; /* две колонки */
@@ -27,7 +27,7 @@
   max-width: 82rem; /* ограничение ширины */
   width: 100%; /* на доступную ширину */
   margin: 0 auto; /* центрирование блока */
-} /* конец .hero-container */
+}
 
 .hero-content { /* текстовая колонка */
   display: flex; /* вертикальный стек */
@@ -35,7 +35,7 @@
   gap: 1.5rem; /* между абзацами */
   flex: 1; /* доля ширины */
   max-width: 39rem; /* ограничение текста */
-} /* конец .hero-content */
+} 
 
 .hero-title { /* крупный заголовок секции */
   font-family: 'Inter', sans-serif; /* шрифт */
@@ -44,7 +44,7 @@
   line-height: 1.1; /* плотный */
   color: #2E2A28; /* почти чёрный коричневый */
   margin: 0; /* сброс margin заголовка */
-} /* конец .hero-title */
+} 
 
 .hero-description { /* абзац описания */
   font-family: 'Inter', sans-serif; /* шрифт */
@@ -62,30 +62,25 @@
   aspect-ratio: 624 / 400; /* сохранять пропорции */
   border-radius: 0.5rem; /* скругление */
   overflow: hidden; /* обрезка по радиусу */
-} /* конец .hero-img */
+} 
 
 @media (max-width: 64rem) { /* 1024px и меньше */
   .hero-container { /* колонки вертикально */
     flex-direction: column; /* стек */
     text-align: center; /* текст по центру */
     align-items: center; /* выровнять flex-детей */
-  } /* конец .hero-container */
+  }
 
   .hero-content { /* контент по центру */
     align-items: center; /* центрировать дочерние блоки */
-  } /* конец .hero-content */
-
-  .hero-image-wrapper { /* запасной класс-обёртка (если появится в JSX) */
-    width: 100%; /* на всю ширину */
-    max-width: 100%; /* без ограничения */
-  } /* конец .hero-image-wrapper */
-} /* конец media 64rem */
+  } 
+} 
 
 @media (max-width: 30rem) { /* очень узкие экраны */
   .hero-section { /* первая секция — меньше поля */
     padding: 2.5rem 1rem; /* компактные отступы */
-  } /* конец .hero-section */
-} /* конец media 30rem */
+  }
+} 
 
 .values { /* блок «Наши ценности» */
   display: flex; /* колонка */
@@ -95,7 +90,7 @@
   gap: 3rem; /* между заголовком и сеткой */
   background: #E8D7CC; /* фон секции */
   font-family: 'Inter', sans-serif; /* базовый шрифт секции */
-} /* конец .values */
+} 
 
 .values_title { /* заголовок «Наши ценности» */
   width: 100%; /* на всю ширину для text-align */
@@ -105,7 +100,7 @@
   line-height: 1.2; /* межстрочный */
   text-align: center; /* по центру */
   color: #2E2A28; /* цвет */
-} /* конец .values_title */
+} 
 
 .values_container { /* сетка из трёх карточек */
   display: grid; /* grid */
@@ -114,7 +109,7 @@
   width: 100%; /* ширина */
   max-width: 82rem; /* ограничение */
   margin: 0 auto; /* центрирование */
-} /* конец .values_container */
+} 
 
 .value-card { /* одна карточка ценности */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* анимация hover */
@@ -130,12 +125,12 @@
   border-radius: 0.5rem; /* скругление */
   min-height: 15rem; /* минимальная высота ряда */
   text-align: center; /* текст по центру */
-} /* конец .value-card */
+} 
 
 .value-card:hover { /* наведение на карточку */
   transform: translateY(-0.625rem); /* поднять */
   box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.1); /* тень */
-} /* конец .value-card:hover */
+} 
 
 .value-card_icon { /* круг под SVG-иконкой */
   width: 3rem; /* ширина */
@@ -145,7 +140,7 @@
   display: flex; /* центрировать иконку */
   align-items: center; /* по вертикали */
   justify-content: center; /* по горизонтали */
-} /* конец .value-card_icon */
+} 
 
 .value-card_heading { /* подзаголовок карточки */
   margin: 0; /* сброс */
@@ -153,7 +148,7 @@
   font-size: 1.25rem; /* размер */
   line-height: 1.5rem; /* высота строки */
   color: #2E2A28; /* цвет */
-} /* конец .value-card_heading */
+} 
 
 .value-card_text { /* текст карточки */
   margin: 0; /* сброс */
@@ -162,13 +157,13 @@
   line-height: 1.55; /* читаемость */
   color: #8A7F7B; /* приглушённый */
   max-width: 21.875rem; /* ограничить длину строки */
-} /* конец .value-card_text */
+}
 
 @media (max-width: 64rem) { /* планшет и мобильный */
   .values_container { /* одна колонка карточек */
     grid-template-columns: 1fr; /* один трек */
-  } /* конец .values_container */
+  } 
   .values { /* меньше поля секции */
     padding: 2.5rem 1.25rem; /* компактнее */
-  } /* конец .values */
-} /* конец media 64rem */
+  } 
+} 

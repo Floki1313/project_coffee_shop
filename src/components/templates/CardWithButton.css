@@ -11,12 +11,12 @@
   height: 100%; /* вытянуть по высоте ячейки */
   box-sizing: border-box; /* padding в ширине */
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* анимация hover */
-} /* конец .menu-card */
+} 
 
 .menu-card:hover { /* наведение на карточку */
   transform: translateY(-5px); /* поднять */
   box-shadow: 0px 10px 20px rgba(44, 26, 20, 0.05); /* тень */
-} /* конец .menu-card:hover */
+} 
 
 .card-image-bg { /* подложка под изображение */
   width: 100%; /* на всю ширину карточки */
@@ -25,13 +25,13 @@
   border-radius: 6px; /* скругление блока */
   overflow: hidden; /* обрезать img */
   flex-shrink: 0; /* не сжимать при нехватке места */
-} /* конец .card-image-bg */
+} 
 
 .card-img { /* само изображение */
   width: 100%; /* заполнить ширину */
   height: 100%; /* заполнить высоту */
   object-fit: cover; /* кадрирование */
-} /* конец .card-img */
+} 
 
 .card-info { /* текстовая часть под картинкой */
   width: 100%; /* полная ширина */
@@ -39,7 +39,7 @@
   flex-direction: column; /* вертикально */
   gap: 0.5rem; /* плотнее между мелкими блоками */
   flex-grow: 1; /* занять место до кнопки */
-} /* конец .card-info */
+} 
 
 .card-header { /* строка название + цена */
   display: flex; /* в ряд */
@@ -48,7 +48,7 @@
   width: 100%; /* полная ширина */
   gap: 0.75rem; /* зазор если текст длинный */
   height: 40%; /* доля высоты (макет) */
-} /* конец .card-header */
+}
 
 .card-title { /* название товара */
   font-weight: 600; /* полужирный */
@@ -58,7 +58,7 @@
   align-self: flex-start; /* прижать к верху колонки */
   margin: 0; /* сброс margin у h3 */
   width: 65%; /* оставить место цене */
-} /* конец .card-title */
+}
 
 .card-price { /* цена справа */
   font-weight: 700; /* жирный */
@@ -68,7 +68,7 @@
   align-self: flex-start; /* верх */
   margin-top: 0.2rem; /* лёгкий сдвиг */
   width: 35%; /* доля ширины строки */
-} /* конец .card-price */
+} 
 
 .card-description { /* описание товара */
   height: 40%; /* доля под макет */
@@ -77,7 +77,7 @@
   line-height: 1.25rem; /* межстрочный */
   color: #7A5C4D; /* приглушённый */
   margin: 0; /* сброс */
-} /* конец .card-description */
+} 
 
 .add-button { /* кнопка добавления в корзину */
   height: 20%; /* доля от card-info (макет) */
@@ -101,7 +101,7 @@
   line-height: 1.2; /* плотная строка */
   text-align: center; /* текст по центру */
   transition: all 0.2s ease-in-out; /* плавные эффекты */
-} /* конец .add-button */
+}
 
 @media (hover: hover) { /* устройства с hover */
   .add-button:hover { /* наведение на кнопку */
@@ -109,32 +109,32 @@
     border-color: #8B5A2B; /* акцентная рамка */
     box-shadow: 0 2px 8px rgba(139, 90, 43, 0.1); /* лёгкая тень */
   } /* конец .add-button:hover */
-} /* конец media hover */
+}
 
 .add-button:active { /* нажатие */
   transform: scale(0.97); /* лёгкое сжатие */
   background: #EBE3D5; /* фон при active */
-} /* конец .add-button:active */
+} 
 
 @media (min-width: 1230px) and (max-width: 1330px) { /* узкое окно между брейкпоинтами */
   .card-header { /* заголовок и цена в колонку */
     flex-direction: column; /* вертикально */
     height: auto; /* убрать фиксированную долю */
     gap: 0.25rem; /* меньше зазор */
-  } /* конец .card-header */
+  }
 
   .card-title, /* селектор группы */
   .card-price { /* оба на полную ширину */
     width: 100%; /* полная ширина строки */
-  } /* конец группы */
+  } 
 
   .card-price { /* цена после переноса */
     margin-top: 0; /* убрать смещение */
-  } /* конец .card-price */
-} /* конец media 1230-1330 */
+  } 
+} 
 
 @media (max-width: 768px) { /* мобильный */
   .card-title { /* заголовок на всю ширину */
     width: 100%; /* без деления 65/35 */
-  } /* конец .card-title */
-} /* конец media 768px */
+  } 
+} 

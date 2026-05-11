@@ -6,7 +6,7 @@
   justify-content: center; /* по горизонтали */
   align-items: center; /* по вертикали */
   padding: 5rem 4rem; /* внутренние поля */
-} /* конец .hero */
+} 
 
 .hero-container { /* обёртка двух колонок */
   width: 100%; /* ширина */
@@ -16,7 +16,7 @@
   align-items: center; /* выровнять по вертикали */
   justify-content: space-between; /* текст и картинка по краям */
   gap: 4rem; /* зазор между колонками */
-} /* конец .hero-container */
+} 
 
 .hero-content { /* левая текстовая колонка */
   flex: 1; /* занять доступную долю ширины */
@@ -24,14 +24,14 @@
   display: flex; /* вертикальный стек */
   flex-direction: column; /* заголовок, абзац, кнопки */
   gap: 1.5rem; /* между блоками */
-} /* конец .hero-content */
+} 
 
 .hero-title { /* главный заголовок */
   font-weight: 700; /* жирный */
   font-size: 3.4375rem; /* крупный размер */
   line-height: 1.12; /* плотный межстрочный */
   color: #2C1A14; /* цвет текста */
-} /* конец .hero-title */
+} 
 
 .hero-text { /* подзаголовок/абзац */
   font-weight: 400; /* обычный */
@@ -39,14 +39,14 @@
   line-height: 1.8; /* удобная читаемость */
   color: #5C4033; /* вторичный коричневый */
   max-width: 35rem; /* уже заголовка */
-} /* конец .hero-text */
+} 
 
-.hero-buttons { /* ряд кнопок CTA */
+.hero-buttons { /* ряд кнопок */
   display: flex; /* в строку */
   flex-direction: row; /* явно горизонтально */
   gap: 1rem; /* между кнопками */
   margin-top: 1rem; /* отступ от текста */
-} /* конец .hero-buttons */
+} 
 
 .btn-primary { /* основная кнопка */
   display: flex; /* текст и стрелка в ряд */
@@ -61,7 +61,7 @@
   font-size: 1rem; /* размер шрифта */
   cursor: pointer; /* рука */
   transition: opacity 0.2s; /* запас под hover-эффект */
-} /* конец .btn-primary */
+} 
 
 .btn-secondary { /* вторичная кнопка */
   padding: 1rem 2rem; /* поля */
@@ -72,7 +72,7 @@
   font-weight: 600; /* полужирный */
   font-size: 1rem; /* размер */
   cursor: pointer; /* рука */
-} /* конец .btn-secondary */
+} 
 
 .hero-image-container { /* правая колонка с картинкой */
   flex: 1; /* доля ширины */
@@ -81,34 +81,34 @@
   box-shadow: 0px 10px 30px rgba(44, 26, 20, 0.1); /* тень */
   border-radius: 8px; /* скругление углов блока */
   overflow: hidden; /* обрезать img по скруглению */
-} /* конец .hero-image-container */
+} 
 
 .hero-img { /* изображение hero */
   width: 100%; /* на всю ширину контейнера */
   height: 100%; /* на всю высоту контейнера */
   object-fit: cover; /* кадрирование с сохранением пропорций */
-} /* конец .hero-img */
+} 
 
 @media (max-width: 1024px) { /* планшет */
   .hero { /* уменьшаем поля секции */
     padding: 3rem 2rem; /* компактнее */
-  } /* конец .hero */
+  } 
   .hero-title { /* меньше заголовок */
     font-size: 2.5rem; /* уменьшенный размер */
-  } /* конец .hero-title */
-} /* конец media 1024px */
+  } 
+} 
 
 @media (max-width: 768px) { /* мобильный */
   .hero-container { /* одна колонка */
     flex-direction: column; /* стек вертикально */
     text-align: center; /* текст по центру */
     gap: 3rem; /* больше зазор между блоками */
-  } /* конец .hero-container */
+  } 
   .hero-buttons { /* кнопки по центру */
     justify-content: center; /* горизонтально */
     flex-direction: column; /* кнопки столбцом */
-  } /* конец .hero-buttons */
+  } 
   .hero-content { /* выровнять содержимое колонки */
     align-items: center; /* по центру поперечной оси */
-  } /* конец .hero-content */
-} /* конец media 768px */
+  } 
+} 

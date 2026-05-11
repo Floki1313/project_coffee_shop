@@ -9,11 +9,11 @@
   left: 0; /* к левому краю */
   right: 0; /* к правому краю (растягиваем) */
   z-index: 1000; /* поверх обычного контента */
-} /* конец .header */
+} 
 
 body { /* глобально: компенсация высоты фиксированной шапки */
   padding-top: 5rem; /* отступ сверху для всего документа */
-} /* конец body */
+} 
 
 .header-container { /* внутренняя сетка шапки */
   width: 100%; /* ширина внутри .header */
@@ -24,31 +24,31 @@ body { /* глобально: компенсация высоты фиксиро
   align-items: center; /* вертикальное центрирование */
   padding: 0 4rem; /* горизонтальные поля */
   position: relative; /* для абсолютного позиционирования .nav на мобильных */
-} /* конец .header-container */
+} 
 
 .logo { /* кликабельный бренд */
   display: flex; /* иконка и текст в ряд */
   align-items: center; /* по центру по вертикали */
   gap: 0.5rem; /* зазор между иконкой и текстом */
   cursor: pointer; /* указатель «рука» */
-} /* конец .logo */
+} 
 
 .logo-img { /* SVG/PNG логотипа */
   width: 2rem; /* ширина иконки */
   height: 2rem; /* высота иконки */
-} /* конец .logo-img */
+} 
 
 .logo-text { /* текст Ballu рядом с иконкой */
   font-family: 'Inter', sans-serif; /* шрифт */
   font-weight: 700; /* жирный */
   font-size: 1.5rem; /* размер */
   color: #2C1A14; /* тёмно-коричневый */
-} /* конец .logo-text */
+} 
 
 .nav { /* основная навигация (десктоп) */
   display: flex; /* пункты в строку */
   gap: 2rem; /* расстояние между пунктами */
-} /* конец .nav */
+} 
 
 .nav-link { /* каждый пункт как <p> с onClick */
   cursor: pointer; /* кликабельно */
@@ -58,16 +58,16 @@ body { /* глобально: компенсация высоты фиксиро
   font-size: 0.9375rem; /* ~15px */
   color: #5C4033; /* коричневый текст */
   transition: color 0.2s; /* плавная смена цвета */
-} /* конец .nav-link */
+} 
 
 .nav-link:hover { /* наведение на пункт */
   color: #8B5A2B; /* акцентный коричневый */
-} /* конец .nav-link:hover */
+} 
 
 .header-actions { /* блок иконок справа */
   display: flex; /* иконки в ряд */
   gap: 1.5rem; /* расстояние между кнопками */
-} /* конец .header-actions */
+}
 
 .icon-btn { /* кнопка без видимой рамки под иконку */
   background: none; /* прозрачный фон */
@@ -79,17 +79,17 @@ body { /* глобально: компенсация высоты фиксиро
   justify-content: center; /* по горизонтали */
   width: 1.5rem; /* ширина кликабельной зоны */
   height: 1.5rem; /* высота кликабельной зоны */
-} /* конец .icon-btn */
+} 
 
 .icon-btn img { /* картинка внутри кнопки */
   width: 100%; /* заполнить ширину кнопки */
   height: 100%; /* заполнить высоту кнопки */
-} /* конец .icon-btn img */
+} 
 
 .badge-container { /* обёртка корзины для бейджа */
   position: relative; /* контекст для absolute бейджа */
   display: inline-flex; /* inline-block + flex для иконки */
-} /* конец .badge-container */
+}
 
 .badge-count { /* красный круг с числом */
   position: absolute; /* позиционирование относительно .badge-container */
@@ -105,28 +105,26 @@ body { /* глобально: компенсация высоты фиксиро
   align-items: center; /* по вертикали */
   justify-content: center; /* по горизонтали */
   border-radius: 50%; /* круг */
-} /* конец .badge-count */
+} 
 
 #order-mobile-btn { /* кнопка открытия мобильного меню */
   display: none; /* скрыта на широких экранах */
-} /* конец #order-mobile-btn */
+} 
 
 @media (max-width: 1024px) { /* уже десктоп / планшет */
   .header-container { /* уменьшаем поля */
     padding: 0 2rem; /* слева и справа */
-  } /* конец .header-container */
-} /* конец media 1024px */
-
+  } 
+} 
 @media (max-width: 768px) { /* мобильная вёрстка */
   body { /* меньше отступ под более низкую шапку */
     padding-top: 4rem; /* высота шапки на мобильном */
-  } /* конец body */
+  } 
 
   .header-container { /* компактная шапка */
     padding: 0 1.25rem; /* узкие поля */
     height: 4rem; /* ниже высота */
-  } /* конец .header-container */
-
+  } 
   .nav { /* выпадающее меню */
     display: none; /* по умолчанию скрыто */
     flex-direction: column; /* пункты столбцом */
@@ -140,15 +138,15 @@ body { /* глобально: компенсация высоты фиксиро
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05); /* тень под панелью */
     max-height: calc(100vh - 4rem); /* не выше окна минус шапка */
     overflow-y: auto; /* прокрутка длинного меню */
-  } /* конец .nav */
+  } 
 
   .nav.open { /* класс из React при открытом меню */
     display: flex; /* показать панель */
-  } /* конец .nav.open */
+  } 
 
   #order-mobile-btn { /* показать кнопку-переключатель */
     display: flex; /* flex для центрирования иконки */
     align-items: center; /* по вертикали */
     justify-content: center; /* по горизонтали */
-  } /* конец #order-mobile-btn */
-} /* конец media 768px */
+  } 
+} 

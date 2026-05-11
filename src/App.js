@@ -1,5 +1,3 @@
-// Импортирует файл стилей для компонента App
-import './App.css';
 
 // Импортирует компонент Layout из папки components/Layout
 import Layout from './components/Layout/Layout';

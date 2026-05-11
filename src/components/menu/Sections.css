@@ -8,7 +8,7 @@
   max-width: 1440px; /* предел ширины контента */
   margin: 0 auto; /* центрирование блока на странице */
   box-sizing: border-box; /* padding в ширине */
-} /* конец .section-wrapper */
+} 
 
 .category-heading { /* блок заголовка категории */
   width: 100%; /* на всю ширину wrapper */
@@ -17,7 +17,7 @@
   margin-bottom: clamp(0.5rem, 2vw, 1rem); /* отступ до сетки */
   text-align: left; /* текст слева */
   align-self: flex-start; /* прижать блок к левому краю flex-родителя */
-} /* конец .category-heading */
+} 
 
 .category-title { /* H1 названия категории */
   font-family: 'Inter', sans-serif; /* шрифт */
@@ -25,7 +25,7 @@
   font-size: clamp(1.25rem, 4vw, 1.75rem); /* отзывчивый размер */
   color: #2C1A14; /* цвет */
   margin: 0; /* сброс отступов заголовка */
-} /* конец .category-title */
+} 
 
 .products-grid { /* сетка карточек товаров */
   display: grid; /* grid layout */
@@ -34,9 +34,9 @@
   justify-content: center; /* центрировать треки */
   justify-items: center; /* центрировать элементы в ячейках */
   grid-template-columns: repeat(4, minmax(250px, 1fr)); /* 4 колонки */
-} /* конец .products-grid */
+} 
 
-.product-card { /* альтернативная карточка (если используется класс) */
+.product-card { /* альтернативная карточка  */
   width: 100%; /* в пределах ячейки */
   max-width: 320px; /* ограничение ширины */
   background: #FFFFFF; /* белый фон */
@@ -48,23 +48,23 @@
   gap: 1rem; /* между частями */
   box-sizing: border-box; /* padding в ширине */
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* анимация hover */
-} /* конец .product-card */
+} 
 
 @media (hover: hover) { /* только устройства с hover */
   .product-card:hover { /* наведение на карточку */
     transform: translateY(-4px); /* слегка приподнять */
     box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* лёгкая тень */
-  } /* конец .product-card:hover */
-} /* конец media hover */
+  } 
+} 
 
 @media (max-width: 1230px) { /* средние ширины */
   .products-grid { /* 2 колонки */
     grid-template-columns: repeat(2, minmax(250px, 1fr)); /* два трека */
-  } /* конец .products-grid */
-} /* конец media 1230px */
+  } 
+} 
 
 @media (max-width: 600px) { /* узкий экран */
   .products-grid { /* одна колонка */
     grid-template-columns: minmax(250px, 1fr); /* один трек */
-  } /* конец .products-grid */
-} /* конец media 600px */
+  } 
+} 

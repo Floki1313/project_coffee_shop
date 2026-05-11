@@ -4,7 +4,7 @@
   justify-content: center; /* по центру */
   padding: 2rem 5% 1rem; /* верх, горизонталь в %, низ */
   box-sizing: border-box; /* padding в ширине */
-} /* конец .filter-container */
+} 
 
 .filter-scroll { /* внутренний ряд кнопок */
   display: flex; /* flex-ряд */
@@ -12,7 +12,7 @@
   justify-content: center; /* центрировать ряд */
   gap: 0.75rem; /* между кнопками */
   max-width: 1200px; /* предел ширины кнопок */
-} /* конец .filter-scroll */
+} 
 
 .filter-btn { /* одна кнопка фильтра */
   all: unset; /* сброс дефолтных стилей button */
@@ -31,22 +31,22 @@
   background: #FFFFFF; /* фон неактивной */
   border: 1px solid #EBE3D5; /* рамка */
   color: #5C4033; /* цвет текста */
-} /* конец .filter-btn */
+} 
 
 .filter-btn:hover { /* наведение */
   border-color: #8B5A2B; /* акцентная рамка */
-} /* конец .filter-btn:hover */
+} 
 
 .filter-btn.active { /* выбранный фильтр */
   background: #8B5A2B; /* заливка */
   border: 1px solid #8B5A2B; /* рамка того же цвета */
   color: #FFFFFF; /* белый текст */
-} /* конец .filter-btn.active */
+} 
 
 @media (max-width: 768px) { /* мобильный */
   .filter-container { /* прижать ленту к началу */
     justify-content: flex-start; /* слева */
-  } /* конец .filter-container */
+  } 
 
   .filter-scroll { /* горизонтальная прокрутка */
     flex-wrap: nowrap; /* одна строка */
@@ -56,9 +56,9 @@
     padding-bottom: 0.5rem; /* место под скролл-палец */
     -webkit-overflow-scrolling: touch; /* инерция iOS */
     scrollbar-width: none; /* скрыть скроллбар Firefox */
-  } /* конец .filter-scroll */
+  } 
 
   .filter-scroll::-webkit-scrollbar { /* скроллбар WebKit */
     display: none; /* полностью скрыть */
-  } /* конец псевдоэлемента */
-} /* конец media 768px */
+  } 
+} 

@@ -4,7 +4,7 @@
   padding: 5rem 4rem; /* поля секции */
   display: flex; /* центрируем внутренний контейнер */
   justify-content: center; /* по горизонтали */
-} /* конец .specialty */
+} 
 
 .specialty-container { /* вертикальный стек заголовка и сетки */
   width: 100%; /* ширина */
@@ -12,14 +12,14 @@
   display: flex; /* flex-колонка */
   flex-direction: column; /* сверху вниз */
   gap: 3rem; /* между шапкой секции и grid */
-} /* конец .specialty-container */
+} 
 
 .specialty-header { /* строка: заголовки слева, ссылка справа */
   display: flex; /* flex-ряд */
   justify-content: space-between; /* края */
   align-items: flex-end; /* выровнять по нижней линии текста */
   width: 100%; /* на всю ширину контейнера */
-} /* конец .specialty-header */
+} 
 
 .specialty-title { /* H2 заголовок секции */
   font-weight: 700; /* жирный */
@@ -27,12 +27,12 @@
   line-height: 1.2; /* межстрочный */
   color: #2C1A14; /* цвет */
   margin-bottom: 0.5rem; /* отступ до подзаголовка */
-} /* конец .specialty-title */
+} 
 
 .specialty-subtitle { /* подзаголовок под H2 */
   font-size: 1rem; /* базовый размер */
   color: #5C4033; /* вторичный цвет */
-} /* конец .specialty-subtitle */
+} 
 
 .view-all { /* ссылка «Всё меню» (элемент <p>) */
   text-decoration: none; /* без подчёркивания */
@@ -42,7 +42,7 @@
   display: flex; /* текст и стрелка в ряд */
   align-items: center; /* по вертикали */
   gap: 0.5rem; /* зазор до стрелки */
-} /* конец .view-all */
+}
 
 .specialty-grid { /* сетка карточек товаров */
   display: grid; /* CSS Grid */
@@ -50,7 +50,7 @@
   gap: 2rem; /* ячейки */
   width: 100%; /* ширина */
   justify-content: center; /* выровнять сетку при свободном месте */
-} /* конец .specialty-grid */
+} 
 
 .menu-card { /* карточка в этой секции (дублирует вид меню) */
   background: #FFFFFF; /* белый фон */
@@ -63,30 +63,30 @@
   width: 100%; /* ширина в ячейке grid */
   max-width: 350px; /* не шире 350px */
   justify-self: center; /* центрировать в ячейке */
-} /* конец .menu-card в specialty */
+} 
 
 @media (max-width: 1230px) { /* средние экраны */
   .specialty-grid { /* две колонки */
     grid-template-columns: repeat(2, minmax(250px, 1fr)); /* 2 × minmax */
   } /* конец .specialty-grid */
-} /* конец media 1230px */
+} 
 
 @media (max-width: 768px) { /* мобильный */
   .specialty { /* меньше поля */
     padding: 3rem 1.25rem; /* компактные отступы */
-  } /* конец .specialty */
+  } 
   .specialty-header { /* шапка секции в колонку */
     flex-direction: column; /* вертикально */
     align-items: flex-start; /* к началу (левый край в LTR) */
     gap: 1.5rem; /* между заголовком и ссылкой */
-  } /* конец .specialty-header */
+  } 
   .specialty-title { /* меньше заголовок */
     font-size: 1.75rem; /* уменьшенный размер */
-  } /* конец .specialty-title */
-} /* конец media 768px */
+  } 
+} 
 
 @media (max-width: 600px) { /* очень узкий экран */
   .specialty-grid { /* одна колонка */
     grid-template-columns: minmax(250px, 1fr); /* одна трековая колонка */
-  } /* конец .specialty-grid */
-} /* конец media 600px */
+  } 
+}
